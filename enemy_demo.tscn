@@ -15,10 +15,7 @@ navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
 [node name="Player" parent="." instance=ExtResource("1_bnqge")]
 position = Vector2(304, 200)
-scale = Vector2(1.6, 1.6)
 
 [node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_ws0my")]
-position = Vector2(128, 232)
-scale = Vector2(1.92, 1.92)
 player = NodePath("../Player")
-speed = 30
+speed = 100

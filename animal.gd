@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var move_speed: float = 40.0
-@export var move_time_range = Vector2(1.0, 2.0) # seconds
-@export var wait_time_range = Vector2(0.5, 1.5) # seconds
+@export var move_time_range = Vector2(1.0, 2.0) 
+@export var wait_time_range = Vector2(0.5, 1.5)
 @export var margin = 16
 
 var direction = Vector2.ZERO

@@ -1,11 +1,15 @@
 extends CharacterBody2D
 
 @export var speed = 400
-
-func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+@export var turn_speed = 5
 
 func _physics_process(delta):
-	get_input()
+	if Input.is_action_pressed("right"):
+		rotation += turn_speed * delta
+
+	if Input.is_action_pressed("left"):
+		rotation -= turn_speed * delta
+
+	var direction = Vector2(1, 0).rotated(rotation)  # Rotate (1, 0) by the current rotation
+	velocity = direction * speed
 	move_and_slide()

@@ -11,7 +11,7 @@ radius = 17.0294
 [sub_resource type="Curve" id="Curve_bnq0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bob4f"]
-radius = 54.0093
+radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oge8u"]
 radius = 19.0

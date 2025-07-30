@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://2lcqjrdv45gt"]
+[gd_scene load_steps=9 format=3 uid="uid://2lcqjrdv45gt"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://playerMove.gd" id="1_e1nhw"]
 [ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://icon.svg" id="2_bp5cv"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_bnq0q"]
+[ext_resource type="Script" uid="uid://cr044nwwn3im4" path="res://enemyRopeDetector.gd" id="5_oge8u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 17.0294
 
 [sub_resource type="Curve" id="Curve_bnq0q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnq0q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bob4f"]
+radius = 54.0093
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oge8u"]
+radius = 19.0
 
 [node name="RopeDemo" type="Node2D"]
 
@@ -29,40 +34,27 @@ scale = Vector2(0.261719, 0.261719)
 texture = ExtResource("2_bp5cv")
 
 [node name="Rope" type="Node2D" parent="Player"]
-position = Vector2(-1, 9)
 script = ExtResource("3_bnq0q")
 num_segments = 30
-rope_length = 200.0
+rope_length = 400.0
 gravity = 0.0
-damping = 3.0
+damping = 10.0
 damping_curve = SubResource("Curve_bnq0q")
-fixate_begin = false
-num_constraint_iterations = 20
-collision_damping = 5.0
+enable_collisions = true
+report_contact_points = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(526, 414)
-scale = Vector2(2.50297, 2.24176)
-collision_layer = 3
-collision_mask = 3
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(193, 225)
+script = ExtResource("5_oge8u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_bnq0q")
+[node name="Detector" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("CircleShape2D_bob4f")
+disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
-scale = Vector2(0.139659, 0.139659)
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(-7.689e-06, -7.56979e-06)
+scale = Vector2(0.261719, 0.261719)
 texture = ExtResource("2_bp5cv")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(811, 199)
-rotation = -0.00196145
-scale = Vector2(2.41393, 2.24177)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_bnq0q")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
-scale = Vector2(0.139659, 0.139659)
-texture = ExtResource("2_bp5cv")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("CircleShape2D_oge8u")

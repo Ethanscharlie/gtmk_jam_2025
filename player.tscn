@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3p58tctq1e55"]
+
+[ext_resource type="Script" path="res://playerMove.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://icon.svg" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
+radius = 17.0294
+
+[sub_resource type="Curve" id="Curve_bnq0q"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e1nhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.689e-06, -7.56979e-06)
+scale = Vector2(0.261719, 0.261719)
+texture = ExtResource("2_hqtel")
+
+[node name="Rope" type="Node2D" parent="."]
+script = ExtResource("3_sweqy")
+num_segments = 30
+rope_length = 400.0
+gravity = 0.0
+damping = 10.0
+damping_curve = SubResource("Curve_bnq0q")
+enable_collisions = true
+report_contact_points = true

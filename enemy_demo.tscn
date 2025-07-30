@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://08hbl1ii6kri"]
+
+[ext_resource type="PackedScene" uid="uid://d3p58tctq1e55" path="res://player.tscn" id="1_bnqge"]
+[ext_resource type="PackedScene" uid="uid://cugdrc6cwd6km" path="res://Mobs/Enemies/basic_enemy.tscn" id="2_ws0my"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
+vertices = PackedVector2Array(1142, 638, 10, 638, 10, 10, 1142, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)])
+
+[node name="EnemyDemo" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_yatjs")
+
+[node name="Player" parent="." instance=ExtResource("1_bnqge")]
+position = Vector2(304, 200)
+scale = Vector2(1.6, 1.6)
+
+[node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_ws0my")]
+position = Vector2(128, 232)
+scale = Vector2(1.92, 1.92)
+player = NodePath("../Player")
+speed = 30

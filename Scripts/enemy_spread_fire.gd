@@ -3,7 +3,7 @@ extends Node2D
 @export var seconds_cooldown: float = 1.0
 @export var count_of_bullets: int = 5
 
-var bullet_scene = preload("res://bullet.tscn")
+var bullet_scene = preload("res://Scenes/Entities/bullet.tscn")
 
 func _ready():
 	_start_timer()

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cugdrc6cwd6km"]
 
-[ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Mobs/Enemies/basic_enemy.gd" id="1_83mcr"]
-[ext_resource type="Script" uid="uid://cr044nwwn3im4" path="res://enemyRopeDetector.gd" id="1_or3st"]
-[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://icon.svg" id="2_83mcr"]
-[ext_resource type="Script" uid="uid://bimqpiv0qxduy" path="res://enemy_spread_fire.gd" id="4_ug4i6"]
+[ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
+[ext_resource type="Script" uid="uid://cr044nwwn3im4" path="res://Scripts/enemyRopeDetector.gd" id="1_or3st"]
+[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_83mcr"]
+[ext_resource type="Script" uid="uid://bimqpiv0qxduy" path="res://Scripts/enemy_spread_fire.gd" id="4_ug4i6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_or3st"]
 radius = 45.0

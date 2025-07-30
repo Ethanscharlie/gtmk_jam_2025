@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 50
 @export var max_speed = 500
 @export var turn_speed = 5
-@export var drag = 1
+@export var drag = 0.1
 
 func _physics_process(delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")

@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://m2lv2uetj56x"]
+[gd_scene load_steps=6 format=3 uid="uid://m2lv2uetj56x"]
 
 [ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://cmwr6e20qrvs3" path="res://Scripts/bullet.gd" id="1_v8qja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
 radius = 9.0
+
+[sub_resource type="Gradient" id="Gradient_enom1"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i81ln"]
+gradient = SubResource("Gradient_enom1")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(0.863248, 0.858974)
 
 [node name="Bullet" type="CharacterBody2D"]
 modulate = Color(0.619424, 0.50609, 0.0277206, 1)
@@ -22,3 +31,10 @@ texture = ExtResource("1_v7oki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v8qja")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-7.15256e-07, 1)
+scale = Vector2(4.0656, 4.01632)
+color = Color(0.909625, 0.994735, 0.990253, 1)
+energy = 0.65
+texture = SubResource("GradientTexture2D_i81ln")

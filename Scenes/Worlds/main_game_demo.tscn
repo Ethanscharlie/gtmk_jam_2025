@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c66ti2yxv4cw4"]
+
+[ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_enom1"]
+[ext_resource type="PackedScene" uid="uid://cugdrc6cwd6km" path="res://Scenes/Entities/basic_enemy.tscn" id="2_lienv"]
+
+[sub_resource type="Gradient" id="Gradient_lienv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_00kun"]
+gradient = SubResource("Gradient_lienv")
+fill_from = Vector2(1, 0)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
+vertices = PackedVector2Array(1142, 638, 10, 638, 10, 10, 1142, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)])
+
+[node name="EnemyDemo" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568, 333)
+scale = Vector2(23.6172, 11.1078)
+texture = SubResource("GradientTexture2D_00kun")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_yatjs")
+
+[node name="Player" parent="." instance=ExtResource("1_enom1")]
+position = Vector2(304, 200)
+
+[node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_lienv")]
+player = NodePath("../Player")
+speed = 100
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.118581, 0.118581, 0.118581, 1)

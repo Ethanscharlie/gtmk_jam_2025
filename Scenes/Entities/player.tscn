@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=8 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_hqtel"]
@@ -8,6 +8,15 @@
 radius = 17.0294
 
 [sub_resource type="Curve" id="Curve_bnq0q"]
+
+[sub_resource type="Gradient" id="Gradient_qbyki"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qbyki"]
+gradient = SubResource("Gradient_qbyki")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(0.863248, 0.858974)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -32,3 +41,10 @@ damping = 10.0
 damping_curve = SubResource("Curve_bnq0q")
 enable_collisions = true
 report_contact_points = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-7.15256e-07, 1)
+scale = Vector2(4.0656, 4.01632)
+color = Color(0.909625, 0.994735, 0.990253, 1)
+energy = 0.65
+texture = SubResource("GradientTexture2D_qbyki")

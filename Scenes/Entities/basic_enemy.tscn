@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cugdrc6cwd6km"]
+[gd_scene load_steps=9 format=3 uid="uid://cugdrc6cwd6km"]
 
 [ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
 [ext_resource type="Script" uid="uid://cr044nwwn3im4" path="res://Scripts/enemyRopeDetector.gd" id="1_or3st"]
@@ -10,6 +10,15 @@ radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83mcr"]
 radius = 19.0
+
+[sub_resource type="Gradient" id="Gradient_tjmvk"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3q615"]
+gradient = SubResource("Gradient_tjmvk")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(0.863248, 0.858974)
 
 [node name="basic_enemy" type="CharacterBody2D"]
 script = ExtResource("1_83mcr")
@@ -31,3 +40,10 @@ shape = SubResource("CircleShape2D_83mcr")
 
 [node name="gun" type="Node2D" parent="."]
 script = ExtResource("4_ug4i6")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-7.15256e-07, 1)
+scale = Vector2(4.0656, 4.01632)
+color = Color(0.909625, 0.994735, 0.990253, 1)
+energy = 0.65
+texture = SubResource("GradientTexture2D_3q615")

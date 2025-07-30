@@ -1,5 +1,4 @@
 extends Node2D
-
 @export var basic_enemy: PackedScene
 
 func _ready():

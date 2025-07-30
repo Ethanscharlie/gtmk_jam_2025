@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c66ti2yxv4cw4"]
+[gd_scene load_steps=5 format=3 uid="uid://binjcs57cmh4w"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_bnqge"]
 [ext_resource type="PackedScene" uid="uid://cugdrc6cwd6km" path="res://Scenes/Entities/basic_enemy.tscn" id="2_ws0my"]
+[ext_resource type="PackedScene" uid="uid://bxtkg1w337e2v" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_up2pj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
 vertices = PackedVector2Array(1142, 638, 10, 638, 10, 10, 1142, 10)
@@ -16,6 +17,8 @@ navigation_polygon = SubResource("NavigationPolygon_yatjs")
 [node name="Player" parent="." instance=ExtResource("1_bnqge")]
 position = Vector2(304, 200)
 
-[node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_ws0my")]
-player = NodePath("../Player")
+[node name="basic_enemy" parent="." instance=ExtResource("2_ws0my")]
 speed = 100
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_up2pj")]
+basic_enemy = ExtResource("2_ws0my")

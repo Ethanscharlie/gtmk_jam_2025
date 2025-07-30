@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3216cu840sak"]
 
-[ext_resource type="Script" uid="uid://rhywpj6ax5xc" path="res://Mobs/Passive/animal.gd" id="1_0tjbk"]
-[ext_resource type="Texture2D" uid="uid://c1fbh23w70u38" path="res://Mobs/Passive/cow.png" id="2_11m2q"]
+[ext_resource type="Script" uid="uid://rhywpj6ax5xc" path="res://Scripts/animal.gd" id="1_0tjbk"]
+[ext_resource type="Texture2D" uid="uid://c1fbh23w70u38" path="res://Images/cow.png" id="2_11m2q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0irm"]
 radius = 27.0

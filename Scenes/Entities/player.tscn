@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://5ol0c5vewmjh"]
 
-[ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://playerMove.gd" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://icon.svg" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]

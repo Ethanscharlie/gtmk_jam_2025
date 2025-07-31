@@ -95,7 +95,6 @@ rope_length = 200.0
 damping = 6.095
 num_constraint_iterations = 22
 render_line = false
-enable_collisions = true
 collision_radius = 5.0
 resolve_collisions_while_constraining = true
 metadata/_edit_group_ = true

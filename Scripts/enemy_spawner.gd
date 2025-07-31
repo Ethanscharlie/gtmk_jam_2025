@@ -20,27 +20,21 @@ func _start_timer():
 func _get_random_spawn_position() -> Vector2:
 	var picked_position = Vector2(0, 0)
 	
-	var random_percentage = randf()
-	var side = _pick_random_side()
-	match side:
+	match ["north", "south", "east", "width"].pick_random():
 		"north":
-			picked_position.x = SCREEN_WIDTH * random_percentage
+			picked_position.x = SCREEN_WIDTH * randf()
 			picked_position.y = -spawn_margin
 		"south":
-			picked_position.x = SCREEN_WIDTH * random_percentage
+			picked_position.x = SCREEN_WIDTH * randf()
 			picked_position.y = SCREEN_HEIGHT + spawn_margin
 		"east":
 			picked_position.x = SCREEN_WIDTH + spawn_margin
-			picked_position.y = SCREEN_HEIGHT * random_percentage
+			picked_position.y = SCREEN_HEIGHT * randf()
 		"width":
 			picked_position.x = -spawn_margin
-			picked_position.y = SCREEN_HEIGHT * random_percentage
+			picked_position.y = SCREEN_HEIGHT * randf()
 	
 	return picked_position
-	
-func _pick_random_side() -> String:
-	var sides = ["north", "south", "east", "width"]
-	return sides.pick_random()
 	
 func spawn_enemy():
 	var enemy = basic_enemy.instantiate()

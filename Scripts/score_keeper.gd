@@ -1,6 +1,6 @@
 extends Node2D
 
-signal score_updated()
+signal score_updated(new_score: int)
 
 var total_enemies_killed = 0
 var score = 0
@@ -15,4 +15,4 @@ func _on_enemy_killed() -> void:
 
 func _update_score() -> void:
 	score = total_enemies_killed
-	emit_signal("score_updated")
+	emit_signal("score_updated", score)

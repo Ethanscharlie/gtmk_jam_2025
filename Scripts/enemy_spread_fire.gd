@@ -1,17 +1,16 @@
 extends Node2D
 
-@export var seconds_cooldown: float = 1.0
-@export var count_of_bullets: int = 5
+@export var seconds_cooldown: float = 3
+@export var count_of_bullets: int = 3
 
 var bullet_scene = preload("res://Scenes/Entities/bullet.tscn")
 
 func _ready():
-	pass
-	#_start_timer()
+	_start_timer()
 
 func _start_timer():
 	while true:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(seconds_cooldown).timeout
 		_fire_bullets_in_spread_pattern()
 		
 func _fire_bullets_in_spread_pattern():

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_enom1"]
 [ext_resource type="PackedScene" uid="uid://cugdrc6cwd6km" path="res://Scenes/Entities/basic_enemy.tscn" id="2_lienv"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
+[ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
 
 [sub_resource type="Gradient" id="Gradient_lienv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)

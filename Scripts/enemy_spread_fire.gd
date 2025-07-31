@@ -14,6 +14,7 @@ func _start_timer():
 		_fire_bullets_in_spread_pattern()
 		
 func _fire_bullets_in_spread_pattern():
+	rotation = 0
 	for i in range(count_of_bullets):
 		_fire_bullet()
 		_rotate_one_tick()

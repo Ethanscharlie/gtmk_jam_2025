@@ -2,9 +2,14 @@ extends Area2D
 
 @export var speed: float = 200
 @onready var player:= get_node("../Player")
+var direction
+
+func _ready():
+	direction = Vector2.RIGHT.rotated(rotation)
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	position += direction * speed * delta
+	#Vector2(cos(angle)* speed * delta,sin(angle)* speed * delta)
 	
 func _on_body_entered(body: Node2D) -> void:
 	print("bullet hit")

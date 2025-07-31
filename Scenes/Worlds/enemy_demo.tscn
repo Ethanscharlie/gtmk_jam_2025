@@ -14,7 +14,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1152, 0, 1152, 64
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
 [node name="Player" parent="." instance=ExtResource("1_bnqge")]
-position = Vector2(304, 200)
+position = Vector2(880, 200)
 
 [node name="basic_enemy" parent="." instance=ExtResource("2_ws0my")]
+position = Vector2(80, 192)
 speed = 100

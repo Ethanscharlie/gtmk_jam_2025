@@ -54,3 +54,5 @@ damping = 10.0
 damping_curve = SubResource("Curve_qbyki")
 enable_collisions = true
 report_contact_points = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

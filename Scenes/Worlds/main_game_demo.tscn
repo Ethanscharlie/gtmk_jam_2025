@@ -17,9 +17,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1152, 0, 1152, 64
 
 [node name="EnemyDemo" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 position = Vector2(568, 333)
-scale = Vector2(23.6172, 11.1078)
+scale = Vector2(55.1589, 36.3898)
 texture = SubResource("GradientTexture2D_00kun")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -30,8 +30,10 @@ navigation_polygon = SubResource("NavigationPolygon_yatjs")
 position = Vector2(304, 200)
 
 [node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_lienv")]
+position = Vector2(641, 444)
 player = NodePath("../Player")
 speed = 100
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.118581, 0.118581, 0.118581, 1)
+scale = Vector2(0.529386, 1.49227)
+color = Color(0.404511, 0.404511, 0.404511, 1)

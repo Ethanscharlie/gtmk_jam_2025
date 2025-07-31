@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
 [ext_resource type="Script" uid="uid://cr044nwwn3im4" path="res://Scripts/enemyRopeDetector.gd" id="1_or3st"]
-[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_83mcr"]
+[ext_resource type="Texture2D" uid="uid://dtn6xan3tjmpp" path="res://Images/RedScraper.png" id="3_tjmvk"]
 [ext_resource type="Script" uid="uid://bimqpiv0qxduy" path="res://Scripts/enemy_spread_fire.gd" id="4_ug4i6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_or3st"]
@@ -29,9 +29,10 @@ disabled = true
 script = ExtResource("1_or3st")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7.689e-06, -7.56979e-06)
-scale = Vector2(0.261719, 0.261719)
-texture = ExtResource("2_83mcr")
+texture_filter = 1
+position = Vector2(-2.86102e-06, -2.86102e-06)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tjmvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_83mcr")
@@ -44,6 +45,6 @@ script = ExtResource("4_ug4i6")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-7.15256e-07, 1)
 scale = Vector2(4.0656, 4.01632)
-color = Color(0.909625, 0.994735, 0.990253, 1)
+color = Color(0.991823, 0.665371, 0.679717, 1)
 energy = 0.65
 texture = SubResource("GradientTexture2D_3q615")

@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="GTMK2025"
-run/main_scene="uid://c4ut54j6boti5"
+run/main_scene="uid://c66ti2yxv4cw4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 

@@ -51,7 +51,7 @@ size = Vector2(128, 128)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_agh7j")
+&"": SubResource("AnimationLibrary_agh7j")
 }
 script = ExtResource("1_auvbo")
 

@@ -16,8 +16,8 @@ text = "Without stiffness:"
 position = Vector2(117.049, 203.049)
 rotation = 1.56586
 script = ExtResource("1_flav6")
-rope_path = NodePath("../Rope")
 strength = 1.0
+rope_path = NodePath("../Rope")
 
 [node name="Rope" type="Node2D" parent="."]
 position = Vector2(96, 198.049)
@@ -46,8 +46,8 @@ The resting direction is downwards and affected by the the node's rotation."
 position = Vector2(343.049, 201.049)
 rotation = 1.56586
 script = ExtResource("1_flav6")
-rope_path = NodePath("../Rope2")
 strength = 1.0
+rope_path = NodePath("../Rope2")
 
 [node name="Rope2" type="Node2D" parent="."]
 position = Vector2(322, 196.049)

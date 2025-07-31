@@ -47,7 +47,7 @@ _data = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_agh7j")
+&"": SubResource("AnimationLibrary_agh7j")
 }
 script = ExtResource("1_sodim")
 
@@ -66,8 +66,8 @@ texture = ExtResource("3_y0u5w")
 position = Vector2(252.384, 257.986)
 rotation = 2.85458
 script = ExtResource("2_hm10y")
-rope_path = NodePath("../Rope")
 apply_angle = true
+rope_path = NodePath("../Rope")
 
 [node name="Icon" type="Sprite2D" parent="RopeAnchor2"]
 position = Vector2(32, 0)

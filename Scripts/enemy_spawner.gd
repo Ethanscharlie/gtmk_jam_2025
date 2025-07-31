@@ -62,5 +62,21 @@ func spawn_enemy():
 
 func _on_enemy_killed() -> void:
 	current_enemies_in_wave -= 1
-
 	if current_enemies_in_wave <= 0: _next_wave()
+	
+func _destroy_all_enemies_and_bullets():
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.queue_free()
+	
+	for bullet in get_tree().get_nodes_in_group("bullets"):
+		bullet.queue_free()	
+	
+func _reset_players_position() -> void:
+	var player = get_node("../../Player")
+	player.position = Vector2(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+
+func _on_player_reset_wave() -> void:
+	_reset_players_position()
+	_destroy_all_enemies_and_bullets()
+	current_wave -= 1
+	_next_wave()

@@ -26,6 +26,11 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/ropesim/plugin.cfg")
 
+[global_group]
+
+enemies=""
+bullets=""
+
 [input]
 
 left={

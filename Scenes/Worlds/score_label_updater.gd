@@ -16,7 +16,10 @@ func _start_display_updater_clock():
 		_increase_display_score_until_at_score()
 			
 func _increase_display_score_until_at_score():
-	if (display_score >= score): return
+	if display_score >= score:
+		display_score = score
+		return
+	
 	display_score += 1
 
 func _on_scorekeeper_score_updated(new_score: int) -> void:

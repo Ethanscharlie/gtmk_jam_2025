@@ -10,6 +10,8 @@ var can_dash = true
 
 
 signal hit
+signal reset_wave
+
 
 func _ready():
 	show()
@@ -43,6 +45,4 @@ func _apply_velocity_drag(delta):
 	velocity = velocity.lerp(Vector2(), drag * delta)
 
 func _on_hit() -> void:
-	print("player hit")
-	get_tree().paused = true
-	hide()
+	emit_signal("reset_wave")

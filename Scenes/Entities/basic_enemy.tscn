@@ -20,7 +20,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.517094)
 fill_to = Vector2(0.863248, 0.858974)
 
-[node name="basic_enemy" type="CharacterBody2D"]
+[node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_mask = 0
 script = ExtResource("1_83mcr")
 

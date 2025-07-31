@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=7 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scenes/Entities/area_2d.gd" id="4_svftf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 17.0294
@@ -11,7 +12,7 @@ radius = 17.0294
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_i3pqv")
 
@@ -25,12 +26,23 @@ texture = ExtResource("2_hqtel")
 
 [node name="Rope" type="Node2D" parent="."]
 script = ExtResource("3_sweqy")
-num_segments = 30
-rope_length = 400.0
+num_segments = 60
+rope_length = 600.0
 gravity = 0.0
+gravity_direction = Vector2(0, 0)
 damping = 10.0
 damping_curve = SubResource("Curve_bnq0q")
-enable_collisions = true
-report_contact_points = true
+num_constraint_iterations = 30
+
+[node name="LoopChecker" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("4_svftf")
+loop_tolerance = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoopChecker"]
+
+[node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
+color = Color(0, 1, 0.316667, 1)
 
 [connection signal="hit" from="." to="." method="_on_hit"]
+[connection signal="body_entered" from="LoopChecker" to="LoopChecker" method="_on_body_entered"]

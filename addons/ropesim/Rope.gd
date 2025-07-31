@@ -108,7 +108,7 @@ signal on_point_count_changed()
 ## If more precision is required to prevent tunneling or stretching between points, the number of
 ## segments, the collision radius and the amount of constraint iterations can be tweaked.
 ## There is also the [member resolve_collisions_while_constraining] option as last resort.
-@export var enable_collisions: bool = false
+@export var enable_collisions: bool = true
 
 ## Collision radius around each rope point.
 @export var collision_radius: float = 1.0
@@ -125,11 +125,11 @@ signal on_point_count_changed()
 
 ## Whether to store collision contact points.
 ## If enabled, can be retrieved using [method get_contact_points].
-@export var report_contact_points: bool = false
+@export var report_contact_points: bool = true
 
 ## Physics layers to collide with.
 @export_flags_2d_physics var collision_mask: int = 1
-
+@export_flags_2d_physics var collision_layer: int = 1
 
 var _registered: bool = false
 var _colors := PackedColorArray()

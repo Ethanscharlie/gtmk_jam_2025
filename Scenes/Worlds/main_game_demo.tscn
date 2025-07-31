@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c66ti2yxv4cw4"]
+[gd_scene load_steps=7 format=3 uid="uid://c66ti2yxv4cw4"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_enom1"]
 [ext_resource type="PackedScene" uid="uid://cugdrc6cwd6km" path="res://Scenes/Entities/basic_enemy.tscn" id="2_lienv"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
 
 [sub_resource type="Gradient" id="Gradient_lienv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -29,11 +30,12 @@ navigation_polygon = SubResource("NavigationPolygon_yatjs")
 [node name="Player" parent="." instance=ExtResource("1_enom1")]
 position = Vector2(304, 200)
 
-[node name="basic_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_lienv")]
+[node name="basic_enemy" parent="." instance=ExtResource("2_lienv")]
 position = Vector2(641, 444)
-player = NodePath("../Player")
 speed = 100
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 scale = Vector2(0.529386, 1.49227)
 color = Color(0.404511, 0.404511, 0.404511, 1)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_lienv")]

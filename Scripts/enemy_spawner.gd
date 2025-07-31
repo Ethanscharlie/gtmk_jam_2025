@@ -1,6 +1,8 @@
 extends Node2D
-@export var basic_enemy: PackedScene
+
 @export var spawn_rate = 2
+
+var basic_enemy = preload("res://Scenes/Entities/basic_enemy.tscn")
 
 func _ready():
 	_start_timer()

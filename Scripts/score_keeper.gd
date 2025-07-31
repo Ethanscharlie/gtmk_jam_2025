@@ -14,5 +14,5 @@ func _on_enemy_killed() -> void:
 	_update_score()
 
 func _update_score() -> void:
-	score = total_enemies_killed
+	score = total_enemies_killed * 100
 	emit_signal("score_updated", score)

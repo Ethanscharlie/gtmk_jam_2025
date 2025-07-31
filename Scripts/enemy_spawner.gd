@@ -1,12 +1,13 @@
 extends Node2D
 @export var basic_enemy: PackedScene
+@export var spawn_rate = 2
 
 func _ready():
 	_start_timer()
 	
 func _start_timer():
 	while true:
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(spawn_rate).timeout
 		spawn_enemies()
 		
 func spawn_enemies():

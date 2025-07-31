@@ -22,7 +22,9 @@ func _fire_bullet():
 	var bullet = bullet_scene.instantiate()
 	bullet.rotation = rotation
 	bullet.position = global_position
-	get_tree().get_root().add_child(bullet)
+	get_parent().get_parent().add_child(bullet) 
+	#changed so referencing player from bullet is easier
+	#get_tree().get_root().add_child(bullet)
 	
 func _rotate_one_tick():
 	var tick_degrees = 360.0 / count_of_bullets

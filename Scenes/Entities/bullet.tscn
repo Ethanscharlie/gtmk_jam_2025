@@ -6,14 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
 radius = 9.0
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="Area2D"]
 modulate = Color(0.619424, 0.50609, 0.0277206, 1)
 self_modulate = Color(0.566699, 0.278697, 0.642402, 1)
 show_behind_parent = true
 scale = Vector2(2, 2)
-collision_layer = 0
-collision_mask = 0
-motion_mode = 1
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,3 +21,5 @@ texture = ExtResource("1_v7oki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v8qja")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

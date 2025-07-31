@@ -32,3 +32,5 @@ damping = 10.0
 damping_curve = SubResource("Curve_bnq0q")
 enable_collisions = true
 report_contact_points = true
+
+[connection signal="hit" from="." to="." method="_on_hit"]

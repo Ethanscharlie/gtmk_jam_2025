@@ -8,10 +8,8 @@ var polygonPoints:PackedVector2Array
 func _physics_process(dt):
 	var points = rope.get_points()
 	var close_points = find_close_points(points)
-	print("close points changed")
 	polygonPoints.clear()
 	if close_points != []:
-		print("close points isnt empty")
 		var point_1 = close_points.get(0)
 		var point_2 = close_points.get(1)
 		if point_1 > point_2:
@@ -21,7 +19,6 @@ func _physics_process(dt):
 		if abs(point_2 - point_1) >= 3:
 			for i in range(point_1,point_2 + 1):
 				polygonPoints.append($CollisionPolygon2D.to_local(rope.get_point(i)))
-			print("make polygon")
 			$CollisionPolygon2D.polygon = polygonPoints
 			$Polygon2D.polygon = polygonPoints
 		else:

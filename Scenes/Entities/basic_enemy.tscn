@@ -41,6 +41,7 @@ shape = SubResource("CircleShape2D_83mcr")
 
 [node name="gun" type="Node2D" parent="."]
 script = ExtResource("4_ug4i6")
+seconds_cooldown = 3.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-7.15256e-07, 1)

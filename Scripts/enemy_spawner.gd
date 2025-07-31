@@ -16,12 +16,14 @@ var wave_data = [
 ]
 
 var basic_enemy = preload("res://Scenes/Entities/basic_enemy.tscn")
+var credits = preload("res://Scenes/Entities/Credits.tscn")
 
 func _ready():
 	_next_wave()
 	
 func _next_wave():
 	if current_wave == len(wave_data) - 1:
+		_open_credits()
 		return
 		
 	current_wave += 1
@@ -80,3 +82,7 @@ func _on_player_reset_wave() -> void:
 	_destroy_all_enemies_and_bullets()
 	current_wave -= 1
 	_next_wave()
+	
+func _open_credits() -> void:
+	var credits_instance = credits.instantiate()
+	get_tree().get_root().add_child.call_deferred(credits_instance)

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmpsu58jcf4je"]
+
+[ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="1_xfoy2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsjyd"]
+line_spacing = 10.0
+font = ExtResource("1_xfoy2")
+font_size = 50
+outline_color = Color(1, 0.253584, 0.839661, 1)
+shadow_size = 9
+shadow_color = Color(0.859243, 0.0435911, 0.523326, 1)
+shadow_offset = Vector2(2.86, 2.45)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 1916.0
+offset_bottom = 1076.0
+text = "Game Name Here
+
+
+__ Created by __
+
+Ethanscharlie
+Golden404
+MajesticGenius101
+Note
+
+
+Score: 696969
+
+
+Thanks for playing!"
+label_settings = SubResource("LabelSettings_vsjyd")
+horizontal_alignment = 1
+vertical_alignment = 1

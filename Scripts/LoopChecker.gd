@@ -27,18 +27,21 @@ func _physics_process(dt):
 			$Polygon2D.polygon = PackedVector2Array()
 			
 func find_close_points(points: PackedVector2Array) -> Array:
-	var loop_size = 0
+	var largest_loop_size = 0
 	var point_pair = []
 	for i in range(points.size()):
+		var point_a = points[i]
 		for j in range(i + 1, points.size()):
-			var dist = points[i].distance_to(points[j])
-			if dist < loop_tolerance and abs(j-i) > loop_size:
-				loop_size = abs(j-i)
-				point_pair = [i,j]
+			var point_b = points[j]
+			var distance_between_points = point_a.distance_to(point_b)
+			var current_loop_size = abs(j - i)
+			if distance_between_points < loop_tolerance and current_loop_size > largest_loop_size:
+				largest_loop_size = current_loop_size
+				point_pair = [i, j]
+				
 	return point_pair
 
 func _on_body_entered(body: Node2D) -> void:
 	if Geometry2D.is_point_in_polygon($CollisionPolygon2D.to_local(body.position), $CollisionPolygon2D.polygon):
 		loopAssist.emit_signal("leavingEnemy",body)
-		print("loopChecker triggered")
 		body.get_node("ropeDetector").emit_signal("kill_enemy")

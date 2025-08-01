@@ -58,9 +58,6 @@ func spawn_enemy():
 	enemy.position = _get_random_spawn_position()
 	get_parent().get_parent().add_child.call_deferred(enemy)
 	
-	#var detector = enemy.get_node("Detector")
-	#detector.enemy_killed.connect(_on_enemy_killed)
-	
 	emit_signal("enemy_spawned", enemy)
 
 func _on_enemy_killed() -> void:

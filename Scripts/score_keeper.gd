@@ -7,8 +7,6 @@ var total_enemies_killed = 0
 var score = 0
 
 func _on_enemy_spawner_enemy_spawned(new_enemy: Variant) -> void:
-	#var detector = new_enemy.get_node("Detector")
-	#detector.enemy_killed.connect(_on_enemy_killed)
 	pass
 	
 func _on_enemy_killed() -> void:

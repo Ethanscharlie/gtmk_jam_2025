@@ -19,6 +19,7 @@ func _on_near_enemy(enemy: Variant) -> void:
 	print("loop assist physics")
 	if current_enemy == null:
 		current_enemy = enemy
+		
 func _on_leaving_enemy(enemy: Variant) -> void:
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
 	if enemy == current_enemy:

@@ -16,7 +16,6 @@ func try_and_loop():
 func _on_near_enemy(enemy: Variant) -> void:
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
 	tween.tween_property(rope, "gravity", 10, 1.0).set_trans(Tween.TRANS_CIRC)
-	print("loop assist physics")
 	if current_enemy == null:
 		current_enemy = enemy
 		
@@ -25,5 +24,4 @@ func _on_leaving_enemy(enemy: Variant) -> void:
 	if enemy == current_enemy:
 		rope.gravity_direction = Vector2.ZERO
 		tween.tween_property(rope, "gravity", 0, 0.5).set_trans(Tween.TRANS_CIRC)
-		print("normal loop physics")
 		current_enemy = null

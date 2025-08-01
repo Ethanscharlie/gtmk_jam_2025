@@ -37,7 +37,7 @@ func _spawn_in_enemies(count: int) -> void:
 func _get_random_spawn_position() -> Vector2:
 	var picked_position = Vector2(0, 0)
 	
-	match ["north", "south", "east", "width"].pick_random():
+	match ["north", "south", "east", "west"].pick_random():
 		"north":
 			picked_position.x = SCREEN_WIDTH * randf()
 			picked_position.y = -spawn_margin
@@ -47,7 +47,7 @@ func _get_random_spawn_position() -> Vector2:
 		"east":
 			picked_position.x = SCREEN_WIDTH + spawn_margin
 			picked_position.y = SCREEN_HEIGHT * randf()
-		"width":
+		"west":
 			picked_position.x = -spawn_margin
 			picked_position.y = SCREEN_HEIGHT * randf()
 	

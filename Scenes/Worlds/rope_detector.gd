@@ -11,7 +11,10 @@ func _on_body_exited(body: Node2D) -> void:
 	body.get_node("Rope/loopAssist").emit_signal("leavingEnemy", get_parent())
 
 func _on_kill_enemy() -> void:
-	print("kill enemy")
+	if not get_parent().is_alive:
+		return 
+		
+	get_parent().is_alive = false
 	get_node("../../game_manager/EnemySpawner").emit_signal("enemy_killed")
 	get_node("../../game_manager/Scorekeeper").emit_signal("enemy_killed")
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)

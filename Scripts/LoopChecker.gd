@@ -25,6 +25,7 @@ func _physics_process(dt):
 		else:
 			$CollisionPolygon2D.polygon = PackedVector2Array()
 			$Polygon2D.polygon = PackedVector2Array()
+			
 func find_close_points(points: PackedVector2Array) -> Array:
 	var loop_size = 0
 	var point_pair = []

@@ -46,3 +46,4 @@ func _apply_velocity_drag(delta):
 
 func _on_hit() -> void:
 	print("player hit")
+	emit_signal("reset_wave")

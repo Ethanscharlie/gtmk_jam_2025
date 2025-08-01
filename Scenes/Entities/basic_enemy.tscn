@@ -21,7 +21,7 @@ fill_to = Vector2(0.863248, 0.858974)
 [sub_resource type="CircleShape2D" id="CircleShape2D_3q615"]
 radius = 225.282
 
-[node name="basic_enemy" type="CharacterBody2D"]
+[node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 33
 motion_mode = 1

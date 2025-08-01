@@ -8,13 +8,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 17.0294
 
-[sub_resource type="Curve" id="Curve_bnq0q"]
+[sub_resource type="Curve" id="Curve_svftf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 0
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_i3pqv")
+speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1nhw")
@@ -26,15 +28,20 @@ texture = ExtResource("2_hqtel")
 
 [node name="Rope" type="Node2D" parent="."]
 script = ExtResource("3_sweqy")
-num_segments = 60
-rope_length = 600.0
+num_segments = 70
+rope_length = 700.0
+segment_length_distribution = SubResource("Curve_svftf")
 gravity = 0.0
 gravity_direction = Vector2(0, 0)
-damping = 10.0
-damping_curve = SubResource("Curve_bnq0q")
+damping = 3.0
+num_constraint_iterations = 200
+line_width = 5.0
+collision_mask = 2
+collision_layer = 32
 
 [node name="LoopChecker" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("4_svftf")
 loop_tolerance = 10
 

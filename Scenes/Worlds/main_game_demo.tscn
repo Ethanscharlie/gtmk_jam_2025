@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddog3da75vn61"]
+[gd_scene load_steps=11 format=3 uid="uid://ddog3da75vn61"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_enom1"]
+[ext_resource type="Script" uid="uid://d242fdjteon34" path="res://Playermousecontrols.gd" id="2_cmw6u"]
 [ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
 [ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="4_00kun"]
 [ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_uw45w"]
@@ -35,6 +36,12 @@ navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
 [node name="Player" parent="." instance=ExtResource("1_enom1")]
 position = Vector2(304, 200)
+script = ExtResource("2_cmw6u")
+normal_speed = 200.0
+boost_speed = 400.0
+follow_distance = 5.0
+position_threshold = 5.0
+stuck_limit = 5
 
 [node name="game_manager" type="Node2D" parent="."]
 
@@ -57,7 +64,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_uw45w")
 
-[connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]
-[connection signal="reset_wave" from="Player" to="game_manager/Scorekeeper" method="_on_player_reset_wave"]
 [connection signal="enemy_spawned" from="game_manager/EnemySpawner" to="game_manager/Scorekeeper" method="_on_enemy_spawner_enemy_spawned"]
 [connection signal="score_updated" from="game_manager/Scorekeeper" to="ScoreLabel" method="_on_scorekeeper_score_updated"]

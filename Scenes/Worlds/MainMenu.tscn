@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4ut54j6boti5"]
 
-[ext_resource type="Script" uid="uid://21l4je2n65xs" path="res://MainMenu.gd" id="1_i26rj"]
+[ext_resource type="Script" uid="uid://21l4je2n65xs" path="res://Scripts/MainMenu.gd" id="1_i26rj"]
 [ext_resource type="FontFile" uid="uid://cph11xsdcwb16" path="res://Fonts/Ziplock 13.ttf" id="4_7r1g0"]
 
 [sub_resource type="Animation" id="Animation_eiy7p"]

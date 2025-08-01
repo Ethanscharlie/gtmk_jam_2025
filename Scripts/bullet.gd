@@ -6,6 +6,7 @@ var direction
 
 func _ready():
 	direction = Vector2.RIGHT.rotated(rotation)
+	add_to_group("bullets")
 
 func _physics_process(delta):
 	position += direction * speed * delta

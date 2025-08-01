@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddog3da75vn61"]
 
-[ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_enom1"]
-[ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
-[ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="4_00kun"]
-[ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_uw45w"]
-[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_uw45w"]
+[ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
+[ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="2_r1lv4"]
+[ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="3_p5lif"]
+[ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_3bwat"]
+[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
 
 [sub_resource type="Gradient" id="Gradient_lienv"]
 offsets = PackedFloat32Array(0.0308989, 0.0365169, 0.235955)
@@ -20,7 +20,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)])
 
 [sub_resource type="Theme" id="Theme_cmw6u"]
-default_font = ExtResource("4_uw45w")
+default_font = ExtResource("4_3bwat")
 
 [node name="EnemyDemo" type="Node2D"]
 
@@ -33,15 +33,15 @@ texture = SubResource("GradientTexture2D_00kun")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
-[node name="Player" parent="." instance=ExtResource("1_enom1")]
+[node name="Player" parent="." instance=ExtResource("1_by2n7")]
 position = Vector2(304, 200)
 
 [node name="game_manager" type="Node2D" parent="."]
 
-[node name="EnemySpawner" parent="game_manager" instance=ExtResource("3_lienv")]
+[node name="EnemySpawner" parent="game_manager" instance=ExtResource("2_r1lv4")]
 
 [node name="Scorekeeper" type="Node2D" parent="game_manager"]
-script = ExtResource("4_00kun")
+script = ExtResource("3_p5lif")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = 1273.0
@@ -55,7 +55,7 @@ theme_override_font_sizes/font_size = 40
 text = "SCORE: 10000"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_uw45w")
+script = ExtResource("5_wlse2")
 
 [connection signal="enemy_spawned" from="game_manager/EnemySpawner" to="game_manager/Scorekeeper" method="_on_enemy_spawner_enemy_spawned"]
 [connection signal="enemy_killed" from="game_manager/Scorekeeper" to="game_manager/Scorekeeper" method="_on_enemy_killed"]

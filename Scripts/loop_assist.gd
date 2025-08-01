@@ -11,11 +11,12 @@ func _physics_process(delta):
 func try_and_loop():
 	if current_enemy != null:
 		var rope_End = rope.get_point_interpolate(1)
-		rope.gravity_direction = rope_End.direction_to(current_enemy.position)
+		rope.gravity_direction = current_enemy.position.direction_to(rope_End)
 
 func _on_near_enemy(enemy: Variant) -> void:
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
-	tween.tween_property(rope, "gravity", 10, 1.0).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(rope, "gravity", 30, 1.0).set_trans(Tween.TRANS_CIRC)
+	
 	if current_enemy == null:
 		current_enemy = enemy
 		

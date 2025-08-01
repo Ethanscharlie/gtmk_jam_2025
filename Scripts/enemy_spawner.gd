@@ -1,6 +1,7 @@
 extends Node2D
 
 signal enemy_spawned(new_enemy)
+signal enemy_killed
 
 @export var spawn_rate = 2
 @export var spawn_margin = 30
@@ -57,8 +58,8 @@ func spawn_enemy():
 	enemy.position = _get_random_spawn_position()
 	get_parent().get_parent().add_child.call_deferred(enemy)
 	
-	var detector = enemy.get_node("Detector")
-	detector.enemy_killed.connect(_on_enemy_killed)
+	#var detector = enemy.get_node("Detector")
+	#detector.enemy_killed.connect(_on_enemy_killed)
 	
 	emit_signal("enemy_spawned", enemy)
 

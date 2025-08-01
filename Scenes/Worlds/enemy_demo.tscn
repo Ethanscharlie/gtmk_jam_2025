@@ -20,7 +20,3 @@ position = Vector2(400, 320)
 [node name="basic_enemy" parent="." instance=ExtResource("2_ws0my")]
 position = Vector2(1104, 504)
 speed = 100
-
-[connection signal="leavingEnemy" from="Player" to="Player" method="_on_leaving_enemy"]
-[connection signal="loopEnemy" from="Player" to="Player" method="_on_loop_enemy"]
-[connection signal="nearEnemy" from="Player" to="Player" method="_on_near_enemy"]

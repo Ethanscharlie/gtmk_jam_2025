@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var rope = get_node("../Rope")
+@onready var loopAssist = get_parent().get_node("Rope/loopAssist")
 @export var loop_tolerance = 11
 
 var polygonPoints:PackedVector2Array
@@ -37,5 +38,6 @@ func find_close_points(points: PackedVector2Array) -> Array:
 
 func _on_body_entered(body: Node2D) -> void:
 	if Geometry2D.is_point_in_polygon($CollisionPolygon2D.to_local(body.position), $CollisionPolygon2D.polygon):
-		get_parent().emit_signal("leavingEnemy",body)
-		get_parent().emit_signal("loopEnemy", body)
+		loopAssist.emit_signal("leavingEnemy",body)
+		print("loopChecker triggered")
+		body.get_node("ropeDetector").emit_signal("kill_enemy")

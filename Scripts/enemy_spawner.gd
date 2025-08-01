@@ -17,12 +17,14 @@ var wave_data = [
 ]
 
 var basic_enemy = preload("res://Scenes/Entities/basic_enemy.tscn")
+var credits = preload("res://Scenes/Entities/Credits.tscn")
 
 func _ready():
 	_next_wave()
 	
 func _next_wave():
 	if current_wave == len(wave_data) - 1:
+		_open_credits()
 		return
 		
 	current_wave += 1
@@ -35,7 +37,7 @@ func _spawn_in_enemies(count: int) -> void:
 func _get_random_spawn_position() -> Vector2:
 	var picked_position = Vector2(0, 0)
 	
-	match ["north", "south", "east", "width"].pick_random():
+	match ["north", "south", "east", "west"].pick_random():
 		"north":
 			picked_position.x = SCREEN_WIDTH * randf()
 			picked_position.y = -spawn_margin
@@ -45,7 +47,7 @@ func _get_random_spawn_position() -> Vector2:
 		"east":
 			picked_position.x = SCREEN_WIDTH + spawn_margin
 			picked_position.y = SCREEN_HEIGHT * randf()
-		"width":
+		"west":
 			picked_position.x = -spawn_margin
 			picked_position.y = SCREEN_HEIGHT * randf()
 	
@@ -81,3 +83,7 @@ func _on_player_reset_wave() -> void:
 	_destroy_all_enemies_and_bullets()
 	current_wave -= 1
 	_next_wave()
+	
+func _open_credits() -> void:
+	var credits_instance = credits.instantiate()
+	get_tree().get_root().add_child.call_deferred(credits_instance)

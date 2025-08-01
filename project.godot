@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GTMK2025"
-run/main_scene="uid://6g052rnsrgac"
+run/main_scene="uid://ddog3da75vn61"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -30,6 +30,11 @@ movie_writer/movie_file="C:/Users/Monta/Godot/gtmk_jam_2025/dev_screen_recording
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ropesim/plugin.cfg")
+
+[global_group]
+
+enemies=""
+bullets=""
 
 [input]
 

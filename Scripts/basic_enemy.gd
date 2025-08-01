@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var player:= get_node("../Player")
 
 @export var speed = 180
+
+var is_alive = true
+
 func _ready() -> void:
 	set_physics_process(false)
 	call_deferred("wait_for_physics")

@@ -17,7 +17,6 @@ point_count = 2
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_i3pqv")
-speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1nhw")

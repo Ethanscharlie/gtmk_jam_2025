@@ -8,7 +8,7 @@ vertices = PackedVector2Array(1249.55, 1070, 10, 1070, 10, 10, 1249.55, 10)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1259.55, 0, 1259.55, 1080, 0, 1080)])
 
-[node name="EnemyDemo" type="Node2D"]
+[node name="EnemyDemo2" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(1.52435, 1)

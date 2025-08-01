@@ -42,8 +42,6 @@ path_postprocessing = 1
 
 [node name="gun" type="Node2D" parent="."]
 script = ExtResource("4_ug4i6")
-seconds_cooldown = 20.0
-count_of_bullets = 0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-7.15256e-07, 1)

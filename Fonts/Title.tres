@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://v1dy38a35irm"]
+
+[ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="1_fxtfs"]
+[ext_resource type="FontFile" uid="uid://dlovu661rsle5" path="res://Fonts/FivePixelsFont.ttf" id="1_texk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n4oq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dw7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hlj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_texk3"]
+
+[resource]
+Button/colors/font_color = Color(0.423529, 0.701961, 0.156863, 1)
+Button/colors/font_hover_color = Color(0.686275, 0.890196, 0.337255, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.219608, 0.454902, 0.101961, 1)
+Button/colors/font_pressed_color = Color(0.788235, 0.988235, 0.8, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 10
+Button/fonts/font = ExtResource("1_texk3")
+Button/styles/hover = SubResource("StyleBoxEmpty_3n4oq")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_6dw7x")
+Button/styles/normal = SubResource("StyleBoxEmpty_2hlj2")
+Button/styles/pressed = SubResource("StyleBoxEmpty_texk3")
+Label/colors/font_color = Color(0.984314, 0.784314, 0, 1)
+Label/colors/font_outline_color = Color(0.866667, 0.54902, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_fxtfs")

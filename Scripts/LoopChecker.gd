@@ -36,4 +36,6 @@ func find_close_points(points: PackedVector2Array) -> Array:
 	return point_pair
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if Geometry2D.is_point_in_polygon($CollisionPolygon2D.to_local(body.position), $CollisionPolygon2D.polygon):
+		get_parent().emit_signal("leavingEnemy",body)
+		get_parent().emit_signal("loopEnemy", body)

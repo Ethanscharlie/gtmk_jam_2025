@@ -29,15 +29,25 @@ func _physics_process(dt):
 func find_close_points(points: PackedVector2Array) -> Array:
 	var largest_loop_size = 0
 	var point_pair = []
+	
 	for i in range(points.size()):
 		var point_a = points[i]
+		
 		for j in range(i + 1, points.size()):
 			var point_b = points[j]
-			var distance_between_points = point_a.distance_to(point_b)
+			
 			var current_loop_size = abs(j - i)
-			if distance_between_points < loop_tolerance and current_loop_size > largest_loop_size:
-				largest_loop_size = current_loop_size
-				point_pair = [i, j]
+			var loop_size_is_larger_than_previous_pick = current_loop_size > largest_loop_size
+			if not loop_size_is_larger_than_previous_pick:
+				continue
+				
+			var distance_between_points = point_a.distance_to(point_b)
+			var points_are_close_enought = distance_between_points < loop_tolerance
+			if not points_are_close_enought:
+				continue
+				
+			largest_loop_size = current_loop_size
+			point_pair = [i, j]
 				
 	return point_pair
 

@@ -8,7 +8,6 @@ radius = 5.0
 height = 37.0
 
 [node name="Bullet" type="Area2D" groups=["bullets"]]
-scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_v8qja")
 

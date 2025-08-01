@@ -4,29 +4,47 @@ extends Area2D
 @onready var loopAssist = get_parent().get_node("Rope/loopAssist")
 @export var loop_tolerance = 11
 
-var polygonPoints:PackedVector2Array
-
 func _physics_process(dt):
+	var close_points = find_close_points()
+	if close_points == []: return
+	
+	var point_1 = close_points.get(0)
+	var point_2 = close_points.get(1)
+	
+	var loop_size = _get_loop_size_from_point_indexes(point_1, point_2)
+	var loop_size_is_large_enough = loop_size >= 3
+	if not loop_size_is_large_enough:
+		_set_polygon_to_nothing()
+		return
+	
+	var polygonPoints = _build_polygon_points_from_rope_segment_indexes(point_1, point_2)
+	_set_polygon_to_points_list(polygonPoints)
+	
+func _set_polygon_to_points_list(points_list: PackedVector2Array) -> void:
+	$CollisionPolygon2D.polygon = points_list
+	$Polygon2D.polygon = points_list
+
+func _build_polygon_points_from_rope_segment_indexes(point_a_index: int, point_b_index: int) -> PackedVector2Array:
+	var polygonPoints = []
+	
+	var sorted_index_array = get_lesser_and_larger_index(point_a_index, point_b_index)
+	var point_with_lesser_index = sorted_index_array[0]
+	var point_with_larger_index = sorted_index_array[1]
+	for i in range(point_with_lesser_index, point_with_larger_index + 1):
+		polygonPoints.append($CollisionPolygon2D.to_local(rope.get_point(i)))
+		
+	return polygonPoints
+	
+func get_lesser_and_larger_index(index_a: int, index_b: int) -> Array:
+	if index_a < index_b: return [index_a, index_b]
+	else: return [index_b, index_a]
+	
+func _set_polygon_to_nothing():
+	$CollisionPolygon2D.polygon = PackedVector2Array()
+	$Polygon2D.polygon = PackedVector2Array()
+	
+func find_close_points() -> Array:
 	var points = rope.get_points()
-	var close_points = find_close_points(points)
-	polygonPoints.clear()
-	if close_points != []:
-		var point_1 = close_points.get(0)
-		var point_2 = close_points.get(1)
-		if point_1 > point_2:
-			var temp = point_1
-			point_1 = point_2
-			point_2 = temp
-		if abs(point_2 - point_1) >= 3:
-			for i in range(point_1,point_2 + 1):
-				polygonPoints.append($CollisionPolygon2D.to_local(rope.get_point(i)))
-			$CollisionPolygon2D.polygon = polygonPoints
-			$Polygon2D.polygon = polygonPoints
-		else:
-			$CollisionPolygon2D.polygon = PackedVector2Array()
-			$Polygon2D.polygon = PackedVector2Array()
-			
-func find_close_points(points: PackedVector2Array) -> Array:
 	var largest_loop_size = 0
 	var point_pair = []
 	

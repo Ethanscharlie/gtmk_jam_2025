@@ -36,20 +36,23 @@ func find_close_points(points: PackedVector2Array) -> Array:
 		for j in range(i + 1, points.size()):
 			var point_b = points[j]
 			
-			var current_loop_size = abs(j - i)
+			var current_loop_size = _get_loop_size_from_point_indexes(i, j)
 			var loop_size_is_larger_than_previous_pick = current_loop_size > largest_loop_size
-			if not loop_size_is_larger_than_previous_pick:
-				continue
+			if not loop_size_is_larger_than_previous_pick: continue
 				
-			var distance_between_points = point_a.distance_to(point_b)
-			var points_are_close_enought = distance_between_points < loop_tolerance
-			if not points_are_close_enought:
-				continue
+			if not _points_are_close_enough(point_a, point_b): continue
 				
 			largest_loop_size = current_loop_size
 			point_pair = [i, j]
 				
 	return point_pair
+
+func _get_loop_size_from_point_indexes(point_a_index: int, point_b_index: int) -> int:
+	return abs(point_a_index - point_b_index)
+	
+func _points_are_close_enough(point_a: Vector2, point_b: Vector2) -> bool:
+	var distance_between_points = point_a.distance_to(point_b)
+	return distance_between_points < loop_tolerance
 
 func _on_body_entered(body: Node2D) -> void:
 	if Geometry2D.is_point_in_polygon($CollisionPolygon2D.to_local(body.position), $CollisionPolygon2D.polygon):

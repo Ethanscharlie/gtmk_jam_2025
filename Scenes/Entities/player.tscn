@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Images/icon.svg" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
-[ext_resource type="Script" path="res://Scenes/Entities/loop_assist.gd" id="4_a1rq5"]
+[ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]

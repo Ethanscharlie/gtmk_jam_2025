@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="3_lienv"]
 [ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="4_00kun"]
 [ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_uw45w"]
-[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scenes/Worlds/score_label_updater.gd" id="5_uw45w"]
+[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_uw45w"]
 
 [sub_resource type="Gradient" id="Gradient_lienv"]
 offsets = PackedFloat32Array(0.0308989, 0.0365169, 0.235955)

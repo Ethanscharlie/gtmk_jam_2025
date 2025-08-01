@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgkqtbngp4xvb"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_4irif"]
-[ext_resource type="Script" uid="uid://bmdji5s1f0hvs" path="res://Scenes/Worlds/rope_detector.gd" id="2_kqik6"]
+[ext_resource type="Script" uid="uid://bmdji5s1f0hvs" path="res://Scripts/rope_detector.gd" id="2_kqik6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kqik6"]
 radius = 225.282

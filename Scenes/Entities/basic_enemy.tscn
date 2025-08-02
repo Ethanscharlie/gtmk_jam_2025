@@ -22,6 +22,7 @@ fill_to = Vector2(0.863248, 0.858974)
 radius = 225.282
 
 [node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
+z_index = 2
 collision_layer = 2
 collision_mask = 35
 motion_mode = 1

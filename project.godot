@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="GTMK2025"
-run/main_scene="uid://ddog3da75vn61"
+run/main_scene="uid://c4ut54j6boti5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Menu="*res://MenuVars.gd"
 
 [display]
 

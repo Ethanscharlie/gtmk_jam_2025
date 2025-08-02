@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciudk1oxcunb4"
-path="res://.godot/imported/RedBlast.png-37bde470609702c1376801e0bd62d5e3.ctex"
+uid="uid://c4dov02lmqrju"
+path="res://.godot/imported/Player.png-0e366cafb320c9bbd959eb4324e89c3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/RedBlast.png"
-dest_files=["res://.godot/imported/RedBlast.png-37bde470609702c1376801e0bd62d5e3.ctex"]
+source_file="res://Textures/Images/Player.png"
+dest_files=["res://.godot/imported/Player.png-0e366cafb320c9bbd959eb4324e89c3c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1fbh23w70u38"
-path="res://.godot/imported/cow.png-beb71053d0b1f3897b863a2f9ddb3ac4.ctex"
+uid="uid://drtqc2q8o6jnl"
+path="res://.godot/imported/Spacemaps3.png-3bc9f3ade3aca9000d677525c446a329.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/cow.png"
-dest_files=["res://.godot/imported/cow.png-beb71053d0b1f3897b863a2f9ddb3ac4.ctex"]
+source_file="res://Textures/SpaceTileMaps/Spacemaps3.png"
+dest_files=["res://.godot/imported/Spacemaps3.png-3bc9f3ade3aca9000d677525c446a329.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtn6xan3tjmpp"
-path="res://.godot/imported/RedScraper.png-be4e82f81b783fb6f7a40a127d362bf3.ctex"
+uid="uid://bddcfp3ng55gi"
+path="res://.godot/imported/Spacemaps4.png-510c77faca23e7c155183cfeac8c7c09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/RedScraper.png"
-dest_files=["res://.godot/imported/RedScraper.png-be4e82f81b783fb6f7a40a127d362bf3.ctex"]
+source_file="res://Textures/SpaceTileMaps/Spacemaps4.png"
+dest_files=["res://.godot/imported/Spacemaps4.png-510c77faca23e7c155183cfeac8c7c09.ctex"]
 
 [params]
 

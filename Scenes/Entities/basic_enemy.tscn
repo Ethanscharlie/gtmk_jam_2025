@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
 [ext_resource type="Texture2D" uid="uid://dtn6xan3tjmpp" path="res://Images/RedScraper.png" id="3_tjmvk"]
-[ext_resource type="Script" uid="uid://bmdji5s1f0hvs" path="res://Scripts/rope_detector.gd" id="4_tjmvk"]
+[ext_resource type="Script" path="res://Scripts/rope_detector.gd" id="4_tjmvk"]
 [ext_resource type="Script" uid="uid://bimqpiv0qxduy" path="res://Scripts/enemy_spread_fire.gd" id="4_ug4i6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjmvk"]

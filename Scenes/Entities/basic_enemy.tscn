@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
 [ext_resource type="Script" uid="uid://3jdeidk5wdh4" path="res://Scripts/spray_bullets_at_player.gd" id="3_3q615"]
-[ext_resource type="Texture2D" uid="uid://dtn6xan3tjmpp" path="res://Images/RedScraper.png" id="3_tjmvk"]
+[ext_resource type="Texture2D" uid="uid://dtn6xan3tjmpp" path="res://Textures/Images/RedScraper.png" id="3_tjmvk"]
 [ext_resource type="Script" path="res://Scripts/rope_detector.gd" id="4_tjmvk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjmvk"]
@@ -22,6 +22,7 @@ fill_to = Vector2(0.863248, 0.858974)
 radius = 225.282
 
 [node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
+z_index = 2
 collision_layer = 2
 collision_mask = 35
 motion_mode = 1

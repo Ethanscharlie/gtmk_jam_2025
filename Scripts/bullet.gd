@@ -7,10 +7,10 @@ var direction
 func _ready():
 	direction = Vector2.RIGHT.rotated(rotation)
 	add_to_group("bullets")
+	$AnimatedSprite2D.play("default")
 
 func _physics_process(delta):
 	position += direction * speed * delta
-	#Vector2(cos(angle)* speed * delta,sin(angle)* speed * delta)
 	
 func _on_body_entered(body: Node2D) -> void:
 	print("bullet hit")

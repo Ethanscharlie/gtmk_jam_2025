@@ -16,9 +16,7 @@ func try_and_loop():
 func _on_near_enemy(enemy: Variant) -> void:
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
 	tween.tween_property(rope, "gravity", 30, 1.0).set_trans(Tween.TRANS_CIRC)
-	
-	if current_enemy == null:
-		current_enemy = enemy
+	current_enemy = enemy
 		
 func _on_leaving_enemy(enemy: Variant) -> void:
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)

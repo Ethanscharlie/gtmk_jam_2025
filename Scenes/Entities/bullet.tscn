@@ -1,26 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://m2lv2uetj56x"]
+[gd_scene load_steps=9 format=3 uid="uid://m2lv2uetj56x"]
 
 [ext_resource type="Script" uid="uid://cmwr6e20qrvs3" path="res://Scripts/bullet.gd" id="1_v8qja"]
-[ext_resource type="Texture2D" uid="uid://ciudk1oxcunb4" path="res://Images/RedBlast.png" id="2_i81ln"]
+[ext_resource type="Texture2D" uid="uid://fbq4eiueg1yl" path="res://Images/Sprite_Sheets/RedBullet.png" id="3_qsvho"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i81ln"]
 radius = 5.0
-height = 37.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgid4"]
+atlas = ExtResource("3_qsvho")
+region = Rect2(97, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raphk"]
+atlas = ExtResource("3_qsvho")
+region = Rect2(65, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmobk"]
+atlas = ExtResource("3_qsvho")
+region = Rect2(33, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o10od"]
+atlas = ExtResource("3_qsvho")
+region = Rect2(1, 0, 28, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fepvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgid4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raphk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmobk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o10od")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bullet" type="Area2D" groups=["bullets"]]
+z_index = -1
+scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_v8qja")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-rotation = 4.71239
-scale = Vector2(3, 3)
-texture = ExtResource("2_i81ln")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(4, 0)
 rotation = 4.71239
 shape = SubResource("CapsuleShape2D_i81ln")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fepvl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2pjs0jp882b8"]
+[gd_scene load_steps=17 format=4 uid="uid://2pjs0jp882b8"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
 [ext_resource type="Script" uid="uid://c82xwtn6ho2gs" path="res://Scenes/Worlds/main_game.gd" id="1_p5lif"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bt6825d8ur4x4" path="res://Textures/scareboards1.png" id="8_25d1b"]
 [ext_resource type="Script" uid="uid://cieliajh3ub6u" path="res://Scripts/wave_label_updater.gd" id="9_wlse2"]
 [ext_resource type="Texture2D" uid="uid://cjxlcqlk58jrb" path="res://Textures/scareboards2.png" id="10_u57tp"]
+[ext_resource type="AudioStream" uid="uid://durhj6oqohfn8" path="res://Audio/Music/Acid Track Full.mp3" id="11_u57tp"]
 
 [sub_resource type="Animation" id="Animation_u57tp"]
 length = 0.001
@@ -169,6 +170,14 @@ flip_h = true
 [node name="PlayerStopingPoints" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PlayerStopingPoints"]
+
+[node name="music_bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_u57tp")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="sfx_waveclear" type="AudioStreamPlayer" parent="."]
 
 [connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]
 [connection signal="reset_wave" from="Player" to="game_manager/Scorekeeper" method="_on_player_reset_wave"]

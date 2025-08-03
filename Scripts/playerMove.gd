@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var drag = 5
 @export var dash_speed = 2000
 @export var dash_cooldown = 1
+@onready var sfx_playerdefeat: AudioStreamPlayer = $sfx_playerdefeat
 
 # Control scheme variables
 # "wasd" or "mouse"
@@ -89,5 +90,6 @@ func _apply_velocity_drag(delta):
 	velocity = velocity.lerp(Vector2(), drag * delta)
 
 func _on_hit() -> void:
+	sfx_playerdefeat.play()
 	print("player hit")
 	emit_signal("reset_wave")

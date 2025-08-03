@@ -10,6 +10,8 @@ signal player_killed
 var SCREEN_WIDTH = 1920
 var SCREEN_HEIGHT = 1080
 
+@onready var sfx_waveclear: AudioStreamPlayer = $"../../sfx_waveclear"
+
 var current_wave = -1
 var current_enemies_in_wave = 0
 var wave_data = [
@@ -71,7 +73,9 @@ func spawn_enemy():
 
 func _on_enemy_killed() -> void:
 	current_enemies_in_wave -= 1
-	if current_enemies_in_wave <= 0: _next_wave()
+	if current_enemies_in_wave <= 0: 
+		_next_wave()
+		sfx_waveclear.play()
 	
 func _destroy_all_enemies_and_bullets():
 	for enemy in get_tree().get_nodes_in_group("enemies"):

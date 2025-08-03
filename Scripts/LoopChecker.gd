@@ -3,6 +3,7 @@ extends Area2D
 @onready var rope = get_node("../Player/Rope")
 @onready var loopAssist = get_node("../Player/Rope/loopAssist")
 @export var loop_tolerance = 11
+@onready var sfx_ropeconnect: AudioStreamPlayer = $"../sfx_ropeconnect"
 
 func _physics_process(dt):
 	var close_points = find_close_points()
@@ -73,6 +74,7 @@ func _points_are_close_enough(point_a: Vector2, point_b: Vector2) -> bool:
 	return distance_between_points < loop_tolerance
 
 func _on_body_entered(body: Node2D) -> void:
+	sfx_ropeconnect.play()
 	if Geometry2D.is_point_in_polygon($CollisionPolygon2D.to_local(body.position), $CollisionPolygon2D.polygon):
 		loopAssist.emit_signal("leavingEnemy",body)
 		body.get_node("ropeDetector").emit_signal("kill_enemy")

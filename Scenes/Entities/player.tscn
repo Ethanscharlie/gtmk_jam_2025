@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=27 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://ct7lxbrr0vq7o" path="res://Textures/Death.png" id="2_2hnfo"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
+[ext_resource type="AudioStream" uid="uid://d2lmuassyfehp" path="res://Audio/SFX/Rope Connect.mp3" id="7_ofjh0"]
+[ext_resource type="AudioStream" uid="uid://blfinihmktqph" path="res://Audio/SFX/Player Death.mp3" id="8_2hnfo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 23.0
@@ -189,6 +191,19 @@ loop_tolerance = 10
 
 [node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
 color = Color(1, 1, 1, 0)
+
+[node name="sfx_ropeconnect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ofjh0")
+volume_db = -10.0
+bus = &"Player SFX"
+
+[node name="sfx_playerdefeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2hnfo")
+volume_db = -3.0
+bus = &"Player SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+scale = Vector2(10, 10)
 
 [connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="leavingEnemy" from="Player/Rope/loopAssist" to="Player/Rope/loopAssist" method="_on_leaving_enemy"]

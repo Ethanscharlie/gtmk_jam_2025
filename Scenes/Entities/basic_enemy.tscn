@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cugdrc6cwd6km"]
+[gd_scene load_steps=17 format=3 uid="uid://cugdrc6cwd6km"]
 
 [ext_resource type="Script" uid="uid://qj5iwe0ls7p0" path="res://Scripts/basic_enemy.gd" id="1_83mcr"]
 [ext_resource type="Script" uid="uid://3jdeidk5wdh4" path="res://Scripts/spray_bullets_at_player.gd" id="3_3q615"]
 [ext_resource type="Texture2D" uid="uid://csn21tvi1bg1w" path="res://Textures/Basic.png" id="4_3q615"]
 [ext_resource type="Script" uid="uid://bmdji5s1f0hvs" path="res://Scripts/rope_detector.gd" id="4_tjmvk"]
+[ext_resource type="AudioStream" uid="uid://b36ptivauhcq2" path="res://Audio/SFX/Enemy Defeat Solo v3.mp3" id="5_rdl85"]
+[ext_resource type="AudioStream" uid="uid://s7gly8k5ucj5" path="res://Audio/SFX/Missle Shot.mp3" id="6_xu6ej"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjmvk"]
 radius = 33.0
@@ -57,6 +59,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iemiq"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("6_xu6ej")
+
 [node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
 z_index = 2
 collision_layer = 2
@@ -94,6 +101,16 @@ position = Vector2(0, -6)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0iqcb")
 frame_progress = 0.617923
+
+[node name="sfx_enemydefeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rdl85")
+volume_db = -3.0
+bus = &"Enemy SFX"
+
+[node name="sfx_enemyshoot" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_iemiq")
+volume_db = -12.0
+bus = &"BulletSFX"
 
 [connection signal="start_chasing_player" from="." to="." method="_on_start_chasing_player"]
 [connection signal="body_entered" from="ropeDetector" to="ropeDetector" method="_on_body_entered"]

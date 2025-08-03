@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://c4ut54j6boti5"]
+[gd_scene load_steps=14 format=4 uid="uid://c4ut54j6boti5"]
 
 [ext_resource type="Script" uid="uid://fm3w3uem5uvg" path="res://Scenes/Worlds/MainMenu.gd" id="1_i26rj"]
 [ext_resource type="Theme" uid="uid://c56j6nm0h2ggm" path="res://Fonts/Title.tres" id="2_eiy7p"]
 [ext_resource type="TileSet" uid="uid://76424pbkqbev" path="res://Scenes/Worlds/Spaceeee.tres" id="2_wpwbt"]
+[ext_resource type="AudioStream" uid="uid://dbexr5lprpbet" path="res://Audio/Music/Menu Music.mp3" id="4_wpwbt"]
+[ext_resource type="AudioStream" uid="uid://c34xli3usee6d" path="res://Audio/SFX/Menu Select.mp3" id="5_q4dkv"]
 
 [sub_resource type="Animation" id="Animation_ijp5w"]
 resource_name = "Fade"
@@ -732,6 +734,11 @@ _data = {
 &"Startup": SubResource("Animation_wpwbt")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nwwvf"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_q4dkv")
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -801,5 +808,18 @@ offset_bottom = 1.321e+08
 scale = Vector2(1e-05, 1e-05)
 color = Color(0, 0, 0, 1)
 
+[node name="music_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wpwbt")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="sfx_mouseover" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_nwwvf")
+volume_db = -5.0
+bus = &"Player SFX"
+
+[connection signal="mouse_entered" from="AnimationPlayer/Title/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="AnimationPlayer/Title/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="AnimationPlayer/Title/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="AnimationPlayer/Title/Options" to="." method="_on_options_pressed"]

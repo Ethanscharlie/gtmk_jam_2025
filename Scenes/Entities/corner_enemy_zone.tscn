@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctkavksaq8q57"]
+
+[ext_resource type="Script" uid="uid://c6xsatvbgvyjf" path="res://Scripts/enemy_zone.gd" id="1_rvg1v"]
+[ext_resource type="PackedScene" uid="uid://dno2yl364ymei" path="res://Scenes/Entities/path_follow_2d.tscn" id="2_xffyk"]
+
+[sub_resource type="Curve2D" id="Curve2D_uw45w"]
+bake_interval = 4.6
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38.8554, 165.362, 0, 0, 0, 0, 41.5663, 138.253, 0, 0, 0, 0, 44.2771, 120.181, 0, 0, 0, 0, 47.8916, 102.108, 0, 0, 0, 0, 54.2169, 84.0362, 0, 0, 0, 0, 59.6386, 75, 0, 0, 0, 0, 65.9639, 65.9639, 0, 0, 0, 0, 75, 59.6386, 0, 0, 0, 0, 84.0362, 54.2169, 0, 0, 0, 0, 102.108, 47.8916, 0, 0, 0, 0, 120.181, 45.1807, 0, 0, 0, 0, 138.253, 41.5663, 0, 0, 0, 0, 165.362, 38.8554)
+}
+point_count = 13
+
+[node name="CornerEnemyZone" type="Path2D"]
+scale = Vector2(3, 3)
+curve = SubResource("Curve2D_uw45w")
+script = ExtResource("1_rvg1v")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+scale = Vector2(0.333, 0.333)
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(114, 552, 0, 552, 0, 0, 534, 0, 534, 120, 468, 120, 348, 138, 237, 174, 159, 261, 132, 375, 117, 495)
+
+[node name="PathFollow2D" parent="." instance=ExtResource("2_xffyk")]
+position = Vector2(38.8554, 165.362)
+rotates = false
+
+[connection signal="snap_enemy_to_path" from="." to="." method="_on_snap_enemy_to_path"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

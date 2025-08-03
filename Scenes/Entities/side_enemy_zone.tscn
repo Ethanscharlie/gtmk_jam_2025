@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://by6xh8f3n84q"]
+
+[sub_resource type="Curve2D" id="Curve2D_cmw6u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 585, 117, 0, 0, 0, 0, 783, 105, 0, 0, 0, 0, 960, 102, 0, 0, 0, 0, 1140, 105, 0, 0, 0, 0, 1338, 117)
+}
+point_count = 5
+
+[node name="SideEnemyZone" type="Path2D"]
+curve = SubResource("Curve2D_cmw6u")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.333333, 0.333333)
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(1602, 360, 1602, 0, 4113, 0, 4113, 360, 4014, 351, 3780, 333, 3537, 324, 3303, 315, 3060, 306, 2826, 306, 2583, 306, 2349, 315, 2115, 324, 1872, 342, 1755, 351)

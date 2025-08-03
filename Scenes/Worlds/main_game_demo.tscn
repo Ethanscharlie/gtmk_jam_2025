@@ -15,9 +15,9 @@ gradient = SubResource("Gradient_lienv")
 fill_from = Vector2(1, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
-vertices = PackedVector2Array(1910, 1070, 10, 1070, 10, 10, 1910, 10)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1920, 0, 1920, 1080, 0, 1080)])
+vertices = PackedVector2Array(494.297, 975.977, 776.68, 984.992, 776.641, 984.992, 1095.38, 984.992, 1095.36, 984.992, 1179.36, 981.992, 1816.02, 582.25, 1910, 10, 1910, 1070, 1803.87, 703.781, 1809.96, 460.969, 1791.76, 345.703, 1773.08, 820.789, 1754.68, 228.281, 1691.85, 914.523, 1663.75, 149.898, 1580.38, 954.773, 1543.64, 119.102, 1464.9, 969.969, 10, 1070, 1341.43, 975.992, 1260.37, 978.992, 1017.19, 988, 860.82, 988, 382.367, 963.883, 271.508, 939.25, 168.227, 854.75, 134.242, 734.25, 113.047, 616.141, 10, 10, 106.969, 497.758, 119.109, 376.367, 146.844, 256.242, 228.352, 165.32, 342.68, 128.242, 461.094, 110.023, 740.422, 98.0078, 1425.6, 110.023, 1218.61, 101.008, 1140.38, 95, 1059.12, 95, 981.102, 92, 821.719, 95, 665.492, 104)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(7, 6, 10), PackedInt32Array(7, 10, 11), PackedInt32Array(12, 9, 8), PackedInt32Array(7, 11, 13), PackedInt32Array(14, 12, 8), PackedInt32Array(7, 13, 15), PackedInt32Array(16, 14, 8), PackedInt32Array(7, 15, 17), PackedInt32Array(18, 16, 8), PackedInt32Array(18, 8, 19, 20), PackedInt32Array(21, 20, 19, 5), PackedInt32Array(3, 5, 19, 22), PackedInt32Array(23, 22, 19), PackedInt32Array(2, 23, 19, 0), PackedInt32Array(24, 0, 19), PackedInt32Array(25, 24, 19), PackedInt32Array(26, 25, 19), PackedInt32Array(27, 26, 19), PackedInt32Array(28, 27, 19), PackedInt32Array(28, 19, 29, 30), PackedInt32Array(31, 30, 29), PackedInt32Array(32, 31, 29), PackedInt32Array(33, 32, 29), PackedInt32Array(34, 33, 29), PackedInt32Array(35, 34, 29), PackedInt32Array(35, 29, 7, 36), PackedInt32Array(7, 17, 37), PackedInt32Array(7, 37, 38, 39), PackedInt32Array(7, 39, 40, 41), PackedInt32Array(7, 41, 42), PackedInt32Array(36, 43, 35), PackedInt32Array(7, 42, 36)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(159, 261, 237, 174, 348, 141, 465, 123, 588, 117, 666, 111, 744, 108, 825, 105, 903, 102, 981, 102, 1059, 105, 1140, 105, 1218, 111, 1296, 114, 1365, 117, 1422, 117, 1545, 129, 1656, 156, 1749, 234, 1782, 348, 1800, 462, 1803, 582, 1788, 699, 1764, 816, 1692, 903, 1575, 942, 1452, 960, 1335, 963, 1257, 966, 1182, 972, 1098, 975, 1020, 978, 945, 978, 861, 975, 783, 975, 702, 972, 624, 966, 549, 966, 495, 966, 384, 951, 261, 924, 174, 843, 138, 732, 120, 612, 117, 498, 132, 381), PackedVector2Array(0, 0, 1920, 0, 1920, 1080, 0, 1080)])
 
 [sub_resource type="Theme" id="Theme_cmw6u"]
 default_font = ExtResource("4_uw45w")
@@ -32,6 +32,11 @@ texture = SubResource("GradientTexture2D_00kun")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D"]
+polygon = PackedVector2Array(234, 174, 345, 138, 462, 120, 666, 114, 741, 108, 822, 105, 981, 102, 1059, 105, 1140, 105, 1218, 111, 1425, 120, 1542, 129, 1659, 159, 1746, 234, 1782, 348, 1800, 462, 1806, 582, 1794, 702, 1764, 816, 1686, 906, 1578, 945, 1464, 960, 1341, 966, 1260, 969, 1179, 972, 1095, 975, 1017, 978, 861, 978, 777, 975, 495, 966, 384, 954, 276, 930, 177, 849, 144, 732, 123, 615, 117, 498, 129, 378, 156, 261)
 
 [node name="Player" parent="." instance=ExtResource("1_enom1")]
 position = Vector2(304, 200)

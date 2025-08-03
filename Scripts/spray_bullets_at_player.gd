@@ -14,7 +14,8 @@ func _start_timer():
 		_fire_bullets_in_spread_pattern()
 		
 func _fire_bullets_in_spread_pattern():
-	rotation = get_parent().rotation + 180
+	rotation = get_parent().rotation - 90
+	rotate(deg_to_rad(spray_angle_degrees/2))
 	for i in range(count_of_bullets):
 		_fire_bullet()
 		_rotate_one_tick()
@@ -22,7 +23,7 @@ func _fire_bullets_in_spread_pattern():
 func _fire_bullet():
 	var bullet_1 = bullet_scene.instantiate()
 	bullet_1.rotation = rotation
-	bullet_1.position = global_position + Vector2(27, 12)
+	bullet_1.position = global_position
 	get_parent().get_parent().add_child(bullet_1)
 	
 func _rotate_one_tick():

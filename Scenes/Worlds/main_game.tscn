@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddog3da75vn61"]
+[gd_scene load_steps=10 format=3 uid="uid://2pjs0jp882b8"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
 [ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="2_r1lv4"]
 [ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="3_p5lif"]
 [ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_3bwat"]
-[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
+[ext_resource type="Script" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
 
 [sub_resource type="Gradient" id="Gradient_lienv"]
 offsets = PackedFloat32Array(0.0308989, 0.0365169, 0.235955)
@@ -25,11 +25,21 @@ default_font = ExtResource("4_3bwat")
 [node name="EnemyDemo" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(568, 333)
-scale = Vector2(55.1589, 36.3898)
+position = Vector2(960, 540)
+scale = Vector2(30, 16.875)
 texture = SubResource("GradientTexture2D_00kun")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_yatjs")
+
+[node name="Enemy_restrictor" type="StaticBody2D" parent="NavigationRegion2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Enemy_restrictor"]
+polygon = PackedVector2Array(234, 174, 345, 138, 462, 120, 939, 120, 942, 120, 1425, 120, 1542, 129, 1659, 159, 1746, 234, 1782, 348, 1800, 462, 1806, 582, 1806, 585, 1794, 702, 1764, 816, 1686, 906, 1578, 945, 1464, 960, 942, 975, 939, 975, 495, 966, 384, 954, 276, 930, 177, 849, 144, 732, 123, 615, 117, 498, 117, 495, 129, 378, 156, 261)
+
+[node name="ChaseNavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
 [node name="Player" parent="." instance=ExtResource("1_by2n7")]

@@ -6,6 +6,7 @@ signal new_wave(wave: int)
 
 @onready var sfx_enemyspawn: AudioStreamPlayer = $sfx_enemyspawn
 @onready var sfx_waveclear: AudioStreamPlayer = $"../../sfx_waveclear"
+@onready var sfx_waveincoming: AudioStreamPlayer = $"../../sfx_waveincoming"
 
 
 
@@ -71,9 +72,10 @@ func spawn_enemy():
 
 func _on_enemy_killed() -> void:
 	current_enemies_in_wave -= 1
-	if current_enemies_in_wave <= 0: 
-		sfx_waveclear.play()
+	if current_enemies_in_wave <= 0:
 		_next_wave()
+		if not current_wave == len(wave_data):
+			sfx_waveclear.play()
 	
 func _destroy_all_enemies_and_bullets():
 	for enemy in get_tree().get_nodes_in_group("enemies"):

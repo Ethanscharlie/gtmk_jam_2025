@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2pjs0jp882b8"]
+[gd_scene load_steps=19 format=3 uid="uid://2pjs0jp882b8"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
 [ext_resource type="Script" uid="uid://c82xwtn6ho2gs" path="res://Scenes/Worlds/main_game.gd" id="1_p5lif"]
@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://cieliajh3ub6u" path="res://Scripts/wave_label_updater.gd" id="9_wlse2"]
 [ext_resource type="AudioStream" uid="uid://dgtbfsb8l0wwo" path="res://Audio/Music/Acid Track Full.mp3" id="10_25d1b"]
 [ext_resource type="AudioStream" uid="uid://bw88pbtnmerb7" path="res://Audio/SFX/Wave Clear.mp3" id="11_u57tp"]
+[ext_resource type="AudioStream" uid="uid://cedw0yaev4c0o" path="res://Audio/SFX/Next Wave.mp3" id="12_fx50d"]
+[ext_resource type="AudioStream" uid="uid://svlng7a77jit" path="res://Audio/SFX/Next Wave 2.mp3" id="13_k0u7c"]
+[ext_resource type="AudioStream" uid="uid://ccmrw8vbabdg" path="res://Audio/SFX/Next Wave 3.mp3" id="14_b0iry"]
+[ext_resource type="AudioStream" uid="uid://dor28up4y0qly" path="res://Audio/SFX/Next Wave 4.mp3" id="15_fhbx6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
 vertices = PackedVector2Array(1910, 1070, 10, 1070, 10, 10, 1910, 10)
@@ -19,6 +23,13 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1920, 0, 1920, 10
 
 [sub_resource type="Theme" id="Theme_cmw6u"]
 default_font = ExtResource("4_3bwat")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gyofy"]
+streams_count = 4
+stream_0/stream = ExtResource("12_fx50d")
+stream_1/stream = ExtResource("13_k0u7c")
+stream_2/stream = ExtResource("14_b0iry")
+stream_3/stream = ExtResource("15_fhbx6")
 
 [node name="EnemyDemo" type="Node2D"]
 script = ExtResource("1_p5lif")
@@ -107,6 +118,11 @@ parameters/looping = true
 [node name="sfx_waveclear" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_u57tp")
 volume_db = -15.0
+bus = &"Player SFX"
+
+[node name="sfx_waveincoming" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_gyofy")
+volume_db = -7.0
 bus = &"Player SFX"
 
 [connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]

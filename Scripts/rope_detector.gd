@@ -4,12 +4,12 @@ signal kill_enemy
 
 func _on_body_entered(body: Node2D) -> void:
 	print("near enemy")
-	body.get_node("Rope/loopAssist").emit_signal("nearEnemy", get_parent())
+	body.get_node("Player/Rope/loopAssist").emit_signal("nearEnemy", get_parent())
 	get_parent().emit_signal("start_chasing_player")
 
 func _on_body_exited(body: Node2D) -> void:
 	print("leaving enemy")
-	body.get_node("Rope/loopAssist").emit_signal("leavingEnemy", get_parent())
+	body.get_node("Player/Rope/loopAssist").emit_signal("leavingEnemy", get_parent())
 
 func _on_kill_enemy() -> void:
 	if not get_parent().is_alive:

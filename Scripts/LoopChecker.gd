@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var rope = get_node("../Rope")
-@onready var loopAssist = get_parent().get_node("Rope/loopAssist")
+@onready var rope = get_node("../Player/Rope")
+@onready var loopAssist = get_node("../Player/Rope/loopAssist")
 @export var loop_tolerance = 11
 
 func _physics_process(dt):

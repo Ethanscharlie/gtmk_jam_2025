@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://bo7tulp1gjuoe" path="res://Textures/Images/icon.svg" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://c4dov02lmqrju" path="res://Textures/Images/Player.png" id="2_a1rq5"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
-radius = 17.0294
+radius = 30.5941
 
 [sub_resource type="Curve" id="Curve_svftf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
@@ -22,9 +22,11 @@ script = ExtResource("1_i3pqv")
 shape = SubResource("CircleShape2D_e1nhw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
 position = Vector2(-7.689e-06, -7.56979e-06)
-scale = Vector2(0.261719, 0.261719)
-texture = ExtResource("2_hqtel")
+scale = Vector2(3, 3)
+texture = ExtResource("2_a1rq5")
 
 [node name="Rope" type="Node2D" parent="."]
 script = ExtResource("3_sweqy")
@@ -36,6 +38,7 @@ gravity_direction = Vector2(0, 0)
 damping = 3.0
 num_constraint_iterations = 200
 line_width = 5.0
+color = Color(0.870462, 0.732859, 3.85046e-07, 1)
 collision_mask = 2
 collision_layer = 32
 

@@ -12,7 +12,7 @@ func _ready() -> void:
 func _start_display_updater_clock():
 	while true:
 		await get_tree().create_timer(clock_speed).timeout
-		text = "SCORE: " + str(display_score)
+		text = "PTS: " + str(display_score)
 		_increase_display_score_until_at_score()
 			
 func _increase_display_score_until_at_score():

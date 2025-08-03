@@ -2,6 +2,7 @@ extends Node2D
 
 signal enemy_spawned(new_enemy)
 signal enemy_killed
+signal new_wave(wave: int)
 
 @export var spawn_rate = 2
 @export var spawn_margin = 30
@@ -27,10 +28,11 @@ func _next_wave():
 		_open_credits()
 		_destroy_all_enemies_and_bullets()
 		return
-		
+	
 	current_wave += 1
 	current_enemies_in_wave = wave_data[current_wave]
 	_spawn_in_enemies(current_enemies_in_wave)
+	emit_signal("new_wave", current_wave)
 	
 func _spawn_in_enemies(count: int) -> void:
 	for i in count: spawn_enemy()

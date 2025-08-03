@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://c4ut54j6boti5"]
+[gd_scene load_steps=17 format=4 uid="uid://c4ut54j6boti5"]
 
 [ext_resource type="Script" uid="uid://fm3w3uem5uvg" path="res://Scenes/Worlds/MainMenu.gd" id="1_i26rj"]
 [ext_resource type="Theme" uid="uid://c56j6nm0h2ggm" path="res://Fonts/Title.tres" id="2_eiy7p"]
 [ext_resource type="Texture2D" uid="uid://bj3qklbhqo41r" path="res://Textures/SpaceTileMaps/Spacemaps2.png" id="3_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://drtqc2q8o6jnl" path="res://Textures/SpaceTileMaps/Spacemaps3.png" id="4_7r1g0"]
 [ext_resource type="Texture2D" uid="uid://bddcfp3ng55gi" path="res://Textures/SpaceTileMaps/Spacemaps4.png" id="5_cqjrg"]
+[ext_resource type="Texture2D" uid="uid://0lh2cq2o6f2f" path="res://Images/pixel_art_small.png" id="6_nwwvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2xy7"]
 texture = ExtResource("3_iwfq2")
@@ -32,6 +33,46 @@ sources/0 = SubResource("TileSetAtlasSource_e2xy7")
 sources/1 = SubResource("TileSetAtlasSource_fimr5")
 sources/2 = SubResource("TileSetAtlasSource_u7cqb")
 
+[sub_resource type="Animation" id="Animation_ijp5w"]
+resource_name = "Fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1920, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.163524, 0.330191),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_q4dkv"]
 resource_name = "Intro"
 length = 2.0
@@ -45,7 +86,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(1.29686, 1.49686, 1.73333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(100, -176), Vector2(-67, -175), Vector2(-175, -174)]
+"values": [Vector2(0, 0), Vector2(-960, 0), Vector2(-1920, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +107,10 @@ tracks/2/path = NodePath("AnimationPlayer/Options:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.06276, 1.33333),
+"times": PackedFloat32Array(1.06667, 1.33333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-31, -121), Vector2(-31, -104)]
+"values": [Vector2(0, 0), Vector2(0, 740)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -90,10 +131,10 @@ tracks/4/path = NodePath("AnimationPlayer/Play:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector2(10, 10)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -105,7 +146,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.263524, 1.13019),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-22, -209), Vector2(-22, -120)]
+"values": [Vector2(0, 540), Vector2(0, 540)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -117,7 +158,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(1.33019),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(10, 10)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -126,10 +167,10 @@ tracks/7/path = NodePath("AnimationPlayer/ColorRect:scale")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.36352, 1.56352, 1.69686, 1.93019),
+"times": PackedFloat32Array(1.3, 1.56352, 1.69686, 1.93019),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2.02633, 2.94143), Vector2(2.76473, 2.94143), Vector2(2.02633, 2.94143), Vector2(1.22342, 2.70494)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -153,7 +194,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0.263524),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(10, 10)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -165,7 +206,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0.263524),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-87, -151)]
+"values": [Vector2(0, 120)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -214,6 +255,46 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cp80i"]
+resource_name = "Options"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1920, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333334),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_nwwvf"]
@@ -399,84 +480,79 @@ tracks/14/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_cp80i"]
-resource_name = "Options"
-length = 0.4
+[sub_resource type="Animation" id="Animation_wsi5b"]
+resource_name = "PlayButton"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("AnimationPlayer/Title:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334, 0.4),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(100, -176), Vector2(-67, -175)]
+"values": [Vector2(0, 120), Vector2(0, -120)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
-tracks/1/interp = 2
+tracks/1/path = NodePath("AnimationPlayer/Play:position")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333334),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(0, -120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, -720)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/ColorRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(-1920, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Title:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.02633, 2.94143), Vector2(2.76473, 2.94143)]
+"values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_ijp5w"]
-resource_name = "Fade"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Options:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-67, -175), Vector2(-175, -174)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.163524, 0.330191),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(2.76473, 2.94143), Vector2(2.02633, 2.94143), Vector2(1.22342, 2.70494)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cp80i"]
@@ -484,6 +560,7 @@ _data = {
 &"Fade": SubResource("Animation_ijp5w"),
 &"Intro": SubResource("Animation_q4dkv"),
 &"Options": SubResource("Animation_cp80i"),
+&"PlayButton": SubResource("Animation_wsi5b"),
 &"RESET": SubResource("Animation_nwwvf")
 }
 
@@ -492,22 +569,18 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -575.0
-offset_top = -324.0
-offset_right = -575.0
-offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i26rj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAdAAkAAQABAAEAAAAqAAkAAQABAAEAAAAqAA8AAQABAAEAAAAdAA8AAQABAAEAAAAdAAoAAQABAAEAAAAdAAsAAQABAAEAAAAdAAwAAQABAAEAAAAdAA0AAQABAAEAAAAdAA4AAQABAAEAAAAeAAkAAQABAAEAAAAeAAoAAQAAAAAAAAAeAAsAAQAAAAEAABAeAAwAAQAAAAEAABAeAA0AAQAAAAEAABAeAA4AAQAAAAEAABAeAA8AAQAAAAAAACAfAAkAAQABAAEAAAAfAAoAAQABAAAAACAfAAsAAgABAAAAAAAfAAwAAgABAAEAAAAfAA0AAgAAAAEAAAAfAA4AAgAAAAEAAAAfAA8AAQABAAAAAAAgAAkAAQABAAEAAAAgAAoAAQABAAAAACAgAAsAAgABAAEAAAAgAAwAAgABAAAAAAAgAA0AAgAAAAEAAAAgAA4AAgABAAAAAAAgAA8AAQABAAAAAAAhAAkAAQABAAEAAAAhAAoAAQABAAAAACAhAAsAAgABAAAAAAAhAAwAAgAAAAEAAAAhAA0AAgABAAEAAAAhAA4AAgAAAAEAAAAhAA8AAQABAAAAAAAiAAkAAQABAAEAAAAiAAoAAQABAAAAACAiAAsAAgAAAAEAAAAiAAwAAgABAAEAAAAiAA0AAgABAAEAAAAiAA4AAgABAAEAAAAiAA8AAQABAAAAAAAjAAkAAQABAAEAAAAjAAoAAQABAAAAACAjAAsAAgABAAAAAAAjAAwAAgABAAAAAAAjAA0AAgABAAEAAAAjAA4AAgAAAAEAAAAjAA8AAQABAAAAAAAkAAkAAQABAAEAAAAkAAoAAQABAAAAACAkAAsAAgABAAAAAAAkAAwAAgAAAAEAAAAkAA0AAgAAAAEAAAAkAA4AAgABAAAAAAAkAA8AAQABAAAAAAAlAAkAAQABAAEAAAAlAAoAAQABAAAAACAlAAsAAgABAAEAAAAlAAwAAgAAAAEAAAAlAA0AAgAAAAEAAAAlAA4AAgABAAAAAAAlAA8AAQABAAAAAAAmAAkAAQABAAEAAAAmAAoAAQABAAAAACAmAAsAAgABAAAAAAAmAAwAAgABAAEAAAAmAA0AAgABAAEAAAAmAA4AAgAAAAEAAAAmAA8AAQABAAAAAAAnAAkAAQABAAEAAAAnAAoAAQABAAAAACAnAAsAAgABAAEAAAAnAAwAAgABAAAAAAAnAA0AAgABAAEAAAAnAA4AAgABAAAAAAAnAA8AAQABAAAAAAAoAAkAAQABAAEAAAAoAAoAAQABAAAAACAoAAsAAgAAAAEAAAAoAAwAAgAAAAEAAAAoAA0AAgAAAAEAAAAoAA4AAgAAAAEAAAAoAA8AAQABAAAAAAApAAkAAQABAAEAAAApAAoAAQAAAAAAABApAAsAAQAAAAEAAAApAAwAAQAAAAEAAAApAA0AAQAAAAEAAAApAA4AAQAAAAEAAAApAA8AAQAAAAAAADAqAAoAAQABAAEAAAAqAAsAAQABAAEAAAAqAAwAAQABAAEAAAAqAA0AAQABAAEAAAAqAA4AAQABAAEAAAAdABAAAQABAAEAAAAeABAAAQABAAEAAAAfABAAAQABAAEAAAAgABAAAQABAAEAAAAhABAAAQABAAEAAAAiABAAAQABAAEAAAAjABAAAQABAAEAAAAkABAAAQABAAEAAAAlABAAAQABAAEAAAAmABAAAQABAAEAAAAnABAAAQABAAEAAAAoABAAAQABAAEAAAApABAAAQABAAEAAAAqABAAAQABAAEAAAArAAkAAQABAAEAAAArAAoAAQABAAEAAAArAAsAAQABAAEAAAArAAwAAQABAAEAAAArAA0AAQABAAEAAAArAA4AAQABAAEAAAArAA8AAQABAAEAAAArABAAAQABAAEAAAAsAAkAAQABAAEAAAAsAAoAAQABAAEAAAAsAAsAAQABAAEAAAAsAAwAAQABAAEAAAAsAA0AAQABAAEAAAAsAA4AAQABAAEAAAAsAA8AAQABAAEAAAAsABAAAQABAAEAAAAtAAkAAQABAAEAAAAtAAoAAQABAAEAAAAtAAsAAQABAAEAAAAtAAwAAQABAAEAAAAtAA0AAQABAAEAAAAtAA4AAQABAAEAAAAtAA8AAQABAAEAAAAtABAAAQABAAEAAAAuAAkAAQABAAEAAAAuAAoAAQABAAEAAAAuAAsAAQABAAEAAAAuAAwAAQABAAEAAAAuAA0AAQABAAEAAAAuAA4AAQABAAEAAAAuAA8AAQABAAEAAAAuABAAAQABAAEAAAAZAAkAAQABAAEAAAAZAAoAAQABAAEAAAAZAAsAAQABAAEAAAAZAAwAAQABAAEAAAAZAA0AAQABAAEAAAAZAA4AAQABAAEAAAAZAA8AAQABAAEAAAAZABAAAQABAAEAAAAaAAkAAQABAAEAAAAaAAoAAQABAAEAAAAaAAsAAQABAAEAAAAaAAwAAQABAAEAAAAaAA0AAQABAAEAAAAaAA4AAQABAAEAAAAaAA8AAQABAAEAAAAaABAAAQABAAEAAAAbAAkAAQABAAEAAAAbAAoAAQABAAEAAAAbAAsAAQABAAEAAAAbAAwAAQABAAEAAAAbAA0AAQABAAEAAAAbAA4AAQABAAEAAAAbAA8AAQABAAEAAAAbABAAAQABAAEAAAAcAAkAAQABAAEAAAAcAAoAAQABAAEAAAAcAAsAAQABAAEAAAAcAAwAAQABAAEAAAAcAA0AAQABAAEAAAAcAA4AAQABAAEAAAAcAA8AAQABAAEAAAAcABAAAQABAAEAAAAZABEAAQABAAEAAAAZABIAAQABAAEAAAAZABMAAQABAAEAAAAZABQAAQABAAEAAAAaABEAAQABAAEAAAAaABIAAQABAAEAAAAaABMAAQABAAEAAAAaABQAAQABAAEAAAAbABEAAQABAAEAAAAbABIAAQABAAEAAAAbABMAAQABAAEAAAAbABQAAQABAAEAAAAcABEAAQABAAEAAAAcABIAAQABAAEAAAAcABMAAQABAAEAAAAcABQAAQABAAEAAAAdABEAAQABAAEAAAAdABIAAQABAAEAAAAdABMAAQABAAEAAAAdABQAAQABAAEAAAAeABEAAQABAAEAAAAeABIAAQABAAEAAAAeABMAAQABAAEAAAAeABQAAQABAAEAAAAfABEAAQABAAEAAAAfABIAAQABAAEAAAAfABMAAQABAAEAAAAfABQAAQABAAEAAAAgABEAAQABAAEAAAAgABIAAQABAAEAAAAgABMAAQABAAEAAAAgABQAAQABAAEAAAAhABEAAQABAAEAAAAhABIAAQABAAEAAAAhABMAAQABAAEAAAAhABQAAQABAAEAAAAiABEAAQABAAEAAAAiABIAAQABAAEAAAAiABMAAQABAAEAAAAiABQAAQABAAEAAAAjABEAAQABAAEAAAAjABIAAQABAAEAAAAjABMAAQABAAEAAAAjABQAAQABAAEAAAAkABEAAQABAAEAAAAkABIAAQABAAEAAAAkABMAAQABAAEAAAAkABQAAQABAAEAAAAlABEAAQABAAEAAAAlABIAAQABAAEAAAAlABMAAQABAAEAAAAlABQAAQABAAEAAAAmABEAAQABAAEAAAAmABIAAQABAAEAAAAmABMAAQABAAEAAAAmABQAAQABAAEAAAAnABEAAQABAAEAAAAnABIAAQABAAEAAAAnABMAAQABAAEAAAAnABQAAQABAAEAAAAoABEAAQABAAEAAAAoABIAAQABAAEAAAAoABMAAQABAAEAAAAoABQAAQABAAEAAAApABEAAQABAAEAAAApABIAAQABAAEAAAApABMAAQABAAEAAAApABQAAQABAAEAAAAqABEAAQABAAEAAAAqABIAAQABAAEAAAAqABMAAQABAAEAAAAqABQAAQABAAEAAAArABEAAQABAAEAAAArABIAAQABAAEAAAArABMAAQABAAEAAAArABQAAQABAAEAAAAsABEAAQABAAEAAAAsABIAAQABAAEAAAAsABMAAQABAAEAAAAsABQAAQABAAEAAAAtABEAAQABAAEAAAAtABIAAQABAAEAAAAtABMAAQABAAEAAAAtABQAAQABAAEAAAAuABEAAQABAAEAAAAuABIAAQABAAEAAAAuABMAAQABAAEAAAAuABQAAQABAAEAAAAZAAUAAQABAAEAAAAZAAYAAQABAAEAAAAZAAcAAQABAAEAAAAZAAgAAQABAAEAAAAaAAUAAQABAAEAAAAaAAYAAQABAAEAAAAaAAcAAQABAAEAAAAaAAgAAQABAAEAAAAbAAUAAQABAAEAAAAbAAYAAQABAAEAAAAbAAcAAQABAAEAAAAbAAgAAQABAAEAAAAcAAUAAQABAAEAAAAcAAYAAQABAAEAAAAcAAcAAQABAAEAAAAcAAgAAQABAAEAAAAdAAUAAQABAAEAAAAdAAYAAQABAAEAAAAdAAcAAQABAAEAAAAdAAgAAQABAAEAAAAeAAUAAQABAAEAAAAeAAYAAQABAAEAAAAeAAcAAQABAAEAAAAeAAgAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAfAAcAAQABAAEAAAAfAAgAAQABAAEAAAAgAAUAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAgAAgAAQABAAEAAAAhAAUAAQABAAEAAAAhAAYAAQABAAEAAAAhAAcAAQABAAEAAAAhAAgAAQABAAEAAAAiAAUAAQABAAEAAAAiAAYAAQABAAEAAAAiAAcAAQABAAEAAAAiAAgAAQABAAEAAAAjAAUAAQABAAEAAAAjAAYAAQABAAEAAAAjAAcAAQABAAEAAAAjAAgAAQABAAEAAAAkAAUAAQABAAEAAAAkAAYAAQABAAEAAAAkAAcAAQABAAEAAAAkAAgAAQABAAEAAAAlAAUAAQABAAEAAAAlAAYAAQABAAEAAAAlAAcAAQABAAEAAAAlAAgAAQABAAEAAAAmAAUAAQABAAEAAAAmAAYAAQABAAEAAAAmAAcAAQABAAEAAAAmAAgAAQABAAEAAAAnAAUAAQABAAEAAAAnAAYAAQABAAEAAAAnAAcAAQABAAEAAAAnAAgAAQABAAEAAAAoAAUAAQABAAEAAAAoAAYAAQABAAEAAAAoAAcAAQABAAEAAAAoAAgAAQABAAEAAAApAAUAAQABAAEAAAApAAYAAQABAAEAAAApAAcAAQABAAEAAAApAAgAAQABAAEAAAAqAAUAAQABAAEAAAAqAAYAAQABAAEAAAAqAAcAAQABAAEAAAAqAAgAAQABAAEAAAArAAUAAQABAAEAAAArAAYAAQABAAEAAAArAAcAAQABAAEAAAArAAgAAQABAAEAAAAsAAUAAQABAAEAAAAsAAYAAQABAAEAAAAsAAcAAQABAAEAAAAsAAgAAQABAAEAAAAtAAUAAQABAAEAAAAtAAYAAQABAAEAAAAtAAcAAQABAAEAAAAtAAgAAQABAAEAAAAuAAUAAQABAAEAAAAuAAYAAQABAAEAAAAuAAcAAQABAAEAAAAuAAgAAQABAAEAAAAvAAUAAQABAAEAAAAvAAYAAQABAAEAAAAvAAcAAQABAAEAAAAvAAgAAQABAAEAAAAvAAkAAQABAAEAAAAvAAoAAQABAAEAAAAvAAsAAQABAAEAAAAvAAwAAQABAAEAAAAvAA0AAQABAAEAAAAvAA4AAQABAAEAAAAvAA8AAQABAAEAAAAvABAAAQABAAEAAAAvABEAAQABAAEAAAAvABIAAQABAAEAAAAvABMAAQABAAEAAAAvABQAAQABAAEAAAAwAAUAAQABAAEAAAAwAAYAAQABAAEAAAAwAAcAAQABAAEAAAAwAAgAAQABAAEAAAAwAAkAAQABAAEAAAAwAAoAAQABAAEAAAAwAAsAAQABAAEAAAAwAAwAAQABAAEAAAAwAA0AAQABAAEAAAAwAA4AAQABAAEAAAAwAA8AAQABAAEAAAAwABAAAQABAAEAAAAwABEAAQABAAEAAAAwABIAAQABAAEAAAAwABMAAQABAAEAAAAwABQAAQABAAEAAAAXAAUAAQABAAEAAAAXAAYAAQABAAEAAAAXAAcAAQABAAEAAAAXAAgAAQABAAEAAAAXAAkAAQABAAEAAAAXAAoAAQABAAEAAAAXAAsAAQABAAEAAAAXAAwAAQABAAEAAAAXAA0AAQABAAEAAAAXAA4AAQABAAEAAAAXAA8AAQABAAEAAAAXABAAAQABAAEAAAAXABEAAQABAAEAAAAXABIAAQABAAEAAAAXABMAAQABAAEAAAAXABQAAQABAAEAAAAYAAUAAQABAAEAAAAYAAYAAQABAAEAAAAYAAcAAQABAAEAAAAYAAgAAQABAAEAAAAYAAkAAQABAAEAAAAYAAoAAQABAAEAAAAYAAsAAQABAAEAAAAYAAwAAQABAAEAAAAYAA0AAQABAAEAAAAYAA4AAQABAAEAAAAYAA8AAQABAAEAAAAYABAAAQABAAEAAAAYABEAAQABAAEAAAAYABIAAQABAAEAAAAYABMAAQABAAEAAAAYABQAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_afec1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 208)
-zoom = Vector2(10, 10)
+position = Vector2(960, 540)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -518,11 +591,10 @@ libraries = {
 texture_filter = 1
 offset_left = -87.0
 offset_top = -151.0
-offset_right = 96.0
-offset_bottom = -128.0
+offset_right = 105.0
+offset_bottom = -141.0
 theme = ExtResource("2_eiy7p")
-text = "I wanna go home
-the game"
+text = "zip zap zoom"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -530,9 +602,8 @@ autowrap_mode = 2
 texture_filter = 1
 offset_left = -22.0
 offset_top = -120.0
-offset_right = 25.0
-offset_bottom = -108.0
-pivot_offset = Vector2(22, 6)
+offset_right = 170.0
+offset_bottom = -110.0
 theme = ExtResource("2_eiy7p")
 text = " play"
 icon_alignment = 1
@@ -541,8 +612,8 @@ icon_alignment = 1
 texture_filter = 1
 offset_left = -30.0
 offset_top = -104.0
-offset_right = 40.0
-offset_bottom = -92.0
+offset_right = 162.0
+offset_bottom = -94.0
 theme = ExtResource("2_eiy7p")
 text = "Options"
 icon_alignment = 1
@@ -550,10 +621,18 @@ icon_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 offset_left = -94.0
 offset_top = -183.0
-offset_right = -36.0
-offset_bottom = -143.0
+offset_right = 1826.0
+offset_bottom = 897.0
 scale = Vector2(3.45144, 3.18841)
 color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+z_index = -2
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(3, 3)
+texture = ExtResource("6_nwwvf")
 
 [connection signal="pressed" from="AnimationPlayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="AnimationPlayer/Options" to="." method="_on_options_pressed"]

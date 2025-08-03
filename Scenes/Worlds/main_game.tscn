@@ -1,18 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://2pjs0jp882b8"]
+[gd_scene load_steps=12 format=3 uid="uid://2pjs0jp882b8"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
+[ext_resource type="Script" uid="uid://c82xwtn6ho2gs" path="res://Scenes/Worlds/main_game.gd" id="1_p5lif"]
+[ext_resource type="Texture2D" uid="uid://0lh2cq2o6f2f" path="res://Images/pixel_art_small.png" id="1_r1lv4"]
 [ext_resource type="PackedScene" uid="uid://civrfmnwqnw2l" path="res://Scenes/Entities/enemy_spawner.tscn" id="2_r1lv4"]
 [ext_resource type="Script" uid="uid://dca0utk7di8kb" path="res://Scripts/score_keeper.gd" id="3_p5lif"]
 [ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="4_3bwat"]
-[ext_resource type="Script" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
-
-[sub_resource type="Gradient" id="Gradient_lienv"]
-offsets = PackedFloat32Array(0.0308989, 0.0365169, 0.235955)
-colors = PackedColorArray(0.126037, 0.135074, 0.200856, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_00kun"]
-gradient = SubResource("Gradient_lienv")
-fill_from = Vector2(1, 0)
+[ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
+[ext_resource type="Texture2D" uid="uid://d07eapao22uf3" path="res://Images/pixilart-drawing.png" id="8_3bwat"]
+[ext_resource type="Script" uid="uid://cieliajh3ub6u" path="res://Scripts/wave_label_updater.gd" id="9_wlse2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
 vertices = PackedVector2Array(1910, 1070, 10, 1070, 10, 10, 1910, 10)
@@ -23,11 +19,14 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1920, 0, 1920, 10
 default_font = ExtResource("4_3bwat")
 
 [node name="EnemyDemo" type="Node2D"]
+script = ExtResource("1_p5lif")
 
 [node name="background" type="Sprite2D" parent="."]
+modulate = Color(0, 0.314, 0.314, 1)
+texture_filter = 1
 position = Vector2(960, 540)
-scale = Vector2(30, 16.875)
-texture = SubResource("GradientTexture2D_00kun")
+scale = Vector2(3, 3)
+texture = ExtResource("1_r1lv4")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
@@ -53,21 +52,52 @@ position = Vector2(304, 200)
 script = ExtResource("3_p5lif")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 1273.0
-offset_top = 951.0
-offset_right = 1793.0
-offset_bottom = 1013.0
+z_index = 1
+texture_filter = 1
+offset_left = 1458.0
+offset_top = 990.0
+offset_right = 1938.0
+offset_bottom = 1032.0
 theme = SubResource("Theme_cmw6u")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.401302, 0.000204989, 0.437144, 1)
+theme_override_colors/font_color = Color(0.0528295, 0.107894, 0.386475, 1)
+theme_override_colors/font_shadow_color = Color(0.0198773, 0.0522471, 0.235565, 1)
 theme_override_font_sizes/font_size = 40
-text = "SCORE: 10000"
+text = "PTS: 10000"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_wlse2")
 
+[node name="Sprite2D" type="Sprite2D" parent="ScoreLabel"]
+z_index = -1
+position = Vector2(192, 12)
+scale = Vector2(3, 3)
+texture = ExtResource("8_3bwat")
+
+[node name="WaveLabel" type="Label" parent="."]
+z_index = 1
+texture_filter = 1
+offset_left = 1581.0
+offset_top = 867.0
+offset_right = 1941.0
+offset_bottom = 909.0
+theme = SubResource("Theme_cmw6u")
+theme_override_colors/font_color = Color(0.0528295, 0.107894, 0.386475, 1)
+theme_override_colors/font_shadow_color = Color(0.0198773, 0.0522471, 0.235565, 1)
+theme_override_font_sizes/font_size = 40
+text = "WAVE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_wlse2")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaveLabel"]
+z_index = -1
+position = Vector2(192, 12)
+scale = Vector2(3, 3)
+texture = ExtResource("8_3bwat")
+
 [connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]
 [connection signal="reset_wave" from="Player" to="game_manager/Scorekeeper" method="_on_player_reset_wave"]
 [connection signal="enemy_spawned" from="game_manager/EnemySpawner" to="game_manager/Scorekeeper" method="_on_enemy_spawner_enemy_spawned"]
+[connection signal="new_wave" from="game_manager/EnemySpawner" to="WaveLabel" method="_on_enemy_spawner_new_wave"]
 [connection signal="enemy_killed" from="game_manager/Scorekeeper" to="game_manager/Scorekeeper" method="_on_enemy_killed"]
 [connection signal="score_updated" from="game_manager/Scorekeeper" to="ScoreLabel" method="_on_scorekeeper_score_updated"]

@@ -29,8 +29,21 @@ script = ExtResource("1_i3pqv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1nhw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+texture_filter = 1
+position = Vector2(-7.689e-06, -7.56979e-06)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_p6fni")
+animation = &"move"
+
+[node name="Rope" type="Node2D" parent="Player"]
+modulate = Color(0.984314, 0.784314, 0, 1)
+z_index = 3
+z_as_relative = false
+
 texture_filter = 1
 position = Vector2(-7.689e-06, -7.56979e-06)
 scale = Vector2(3, 3)
@@ -62,7 +75,7 @@ loop_tolerance = 10
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoopChecker"]
 
 [node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
-color = Color(0, 1, 0.316667, 1)
+color = Color(1, 1, 1, 0)
 
 [node name="Sparks" type="Node2D" parent="."]
 position = Vector2(0, 21)

@@ -1,22 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=10 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c4dov02lmqrju" path="res://Textures/Images/Player.png" id="2_a1rq5"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
-[ext_resource type="Script" uid="uid://ccm8f0papn8q1" path="res://Scenes/Entities/sparks.gd" id="5_ofjh0"]
-[ext_resource type="Texture2D" uid="uid://bvq4oiwlwtxus" path="res://Images/Spark.png" id="5_yqx0t"]
+[ext_resource type="Script" uid="uid://ccm8f0papn8q1" path="res://Scripts/sparks.gd" id="5_ofjh0"]
+[ext_resource type="PackedScene" uid="uid://u0sat8e2rse3" path="res://Scenes/Entities/cpu_particles_2d.tscn" id="7_ofjh0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 30.5941
 
 [sub_resource type="Curve" id="Curve_svftf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_a1rq5"]
-_data = [Vector2(0, 1), 0.0, -2.44053, 0, 0, Vector2(1, 0), -0.339685, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
@@ -44,12 +40,20 @@ gravity_direction = Vector2(0, 0)
 damping = 3.0
 num_constraint_iterations = 200
 line_width = 5.0
-color = Color(0.870462, 0.732859, 3.85046e-07, 1)
+color = Color(0.972549, 0.694118, 0.219608, 1)
 collision_mask = 2
 collision_layer = 32
 
 [node name="loopAssist" type="Node2D" parent="Rope"]
 script = ExtResource("4_a1rq5")
+
+[node name="Sparks" type="Node2D" parent="Rope"]
+position = Vector2(0, 21)
+script = ExtResource("5_ofjh0")
+
+[node name="CPUParticles2D" parent="Rope/Sparks" instance=ExtResource("7_ofjh0")]
+position = Vector2(0, -21)
+color = Color(0.972549, 0.694118, 0.219608, 1)
 
 [node name="LoopChecker" type="Area2D" parent="."]
 collision_layer = 8
@@ -61,27 +65,6 @@ loop_tolerance = 10
 
 [node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
 color = Color(0, 1, 0.316667, 1)
-
-[node name="Sparks" type="Node2D" parent="."]
-position = Vector2(0, 21)
-script = ExtResource("5_ofjh0")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Sparks"]
-texture_filter = 1
-texture = ExtResource("5_yqx0t")
-lifetime = 2.0
-preprocess = 0.52
-speed_scale = 2.35
-explosiveness = 1.0
-randomness = 0.05
-lifetime_randomness = 0.18
-emission_shape = 1
-emission_sphere_radius = 3.0
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 15.0
-initial_velocity_max = 30.0
-scale_amount_curve = SubResource("Curve_a1rq5")
 
 [connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="leavingEnemy" from="Rope/loopAssist" to="Rope/loopAssist" method="_on_leaving_enemy"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fhep7pen1poi"
+path="res://.godot/imported/Enemy Appear.mp3-ea89e0ee20f006838c04671143382f02.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Enemy Appear.mp3"
+dest_files=["res://.godot/imported/Enemy Appear.mp3-ea89e0ee20f006838c04671143382f02.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

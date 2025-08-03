@@ -1,6 +1,7 @@
 extends Area2D
 
 signal kill_enemy
+@onready var sfx_enemydefeat: AudioStreamPlayer = $"../sfx/sfx_enemydefeat"
 
 func _on_body_entered(body: Node2D) -> void:
 	print("near enemy")
@@ -14,7 +15,8 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_kill_enemy() -> void:
 	if not get_parent().is_alive:
 		return 
-		
+	
+	sfx_enemydefeat.play()
 	get_parent().is_alive = false
 	get_node("../../game_manager/EnemySpawner").emit_signal("enemy_killed")
 	get_node("../../game_manager/Scorekeeper").emit_signal("enemy_killed")

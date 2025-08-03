@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=13 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c4dov02lmqrju" path="res://Textures/Images/Player.png" id="2_a1rq5"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
 [ext_resource type="Script" uid="uid://ccm8f0papn8q1" path="res://Scenes/Entities/sparks.gd" id="5_ofjh0"]
 [ext_resource type="Texture2D" uid="uid://bvq4oiwlwtxus" path="res://Images/Spark.png" id="5_yqx0t"]
+[ext_resource type="AudioStream" uid="uid://cb2phm6vwviux" path="res://Audio/SFX/Rope Connect.mp3" id="8_2hnfo"]
+[ext_resource type="AudioStream" uid="uid://bqjqsegrqihxp" path="res://Audio/SFX/Player Death.mp3" id="9_y18yp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 30.5941
@@ -82,6 +84,20 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 15.0
 initial_velocity_max = 30.0
 scale_amount_curve = SubResource("Curve_a1rq5")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+scale = Vector2(10, 10)
+current = true
+
+[node name="sfx_ropeconnect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2hnfo")
+volume_db = -10.0
+bus = &"Player SFX"
+
+[node name="sfx_playerdefeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_y18yp")
+volume_db = -3.0
+bus = &"Player SFX"
 
 [connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="leavingEnemy" from="Rope/loopAssist" to="Rope/loopAssist" method="_on_leaving_enemy"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://2pjs0jp882b8"]
+[gd_scene load_steps=14 format=3 uid="uid://2pjs0jp882b8"]
 
 [ext_resource type="PackedScene" uid="uid://5ol0c5vewmjh" path="res://Scenes/Entities/player.tscn" id="1_by2n7"]
 [ext_resource type="Script" uid="uid://c82xwtn6ho2gs" path="res://Scenes/Worlds/main_game.gd" id="1_p5lif"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://056wkbfyig7k" path="res://Scripts/score_label_updater.gd" id="5_wlse2"]
 [ext_resource type="Texture2D" uid="uid://d07eapao22uf3" path="res://Images/pixilart-drawing.png" id="8_3bwat"]
 [ext_resource type="Script" uid="uid://cieliajh3ub6u" path="res://Scripts/wave_label_updater.gd" id="9_wlse2"]
+[ext_resource type="AudioStream" uid="uid://dgtbfsb8l0wwo" path="res://Audio/Music/Acid Track Full.mp3" id="10_25d1b"]
+[ext_resource type="AudioStream" uid="uid://bw88pbtnmerb7" path="res://Audio/SFX/Wave Clear.mp3" id="11_u57tp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yatjs"]
 vertices = PackedVector2Array(1910, 1070, 10, 1070, 10, 10, 1910, 10)
@@ -94,6 +96,18 @@ z_index = -1
 position = Vector2(192, 12)
 scale = Vector2(3, 3)
 texture = ExtResource("8_3bwat")
+
+[node name="music_bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_25d1b")
+volume_db = -3.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="sfx_waveclear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_u57tp")
+volume_db = -15.0
+bus = &"Player SFX"
 
 [connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]
 [connection signal="reset_wave" from="Player" to="game_manager/Scorekeeper" method="_on_player_reset_wave"]

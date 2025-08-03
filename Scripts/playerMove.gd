@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var dash_speed = 2000
 @export var dash_cooldown = 1
 var can_dash = true
+@onready var sfx_playerdefeat: AudioStreamPlayer = $sfx_playerdefeat
 
 
 signal hit
@@ -46,4 +47,5 @@ func _apply_velocity_drag(delta):
 
 func _on_hit() -> void:
 	print("player hit")
+	sfx_playerdefeat.play()
 	emit_signal("reset_wave")

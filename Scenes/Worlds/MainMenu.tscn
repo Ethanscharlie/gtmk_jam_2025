@@ -1,37 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://c4ut54j6boti5"]
+[gd_scene load_steps=11 format=4 uid="uid://c4ut54j6boti5"]
 
 [ext_resource type="Script" uid="uid://fm3w3uem5uvg" path="res://Scenes/Worlds/MainMenu.gd" id="1_i26rj"]
 [ext_resource type="Theme" uid="uid://c56j6nm0h2ggm" path="res://Fonts/Title.tres" id="2_eiy7p"]
-[ext_resource type="Texture2D" uid="uid://bj3qklbhqo41r" path="res://Textures/SpaceTileMaps/Spacemaps2.png" id="3_iwfq2"]
-[ext_resource type="Texture2D" uid="uid://drtqc2q8o6jnl" path="res://Textures/SpaceTileMaps/Spacemaps3.png" id="4_7r1g0"]
-[ext_resource type="Texture2D" uid="uid://bddcfp3ng55gi" path="res://Textures/SpaceTileMaps/Spacemaps4.png" id="5_cqjrg"]
-[ext_resource type="Texture2D" uid="uid://0lh2cq2o6f2f" path="res://Images/pixel_art_small.png" id="6_nwwvf"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2xy7"]
-texture = ExtResource("3_iwfq2")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fimr5"]
-texture = ExtResource("4_7r1g0")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7cqb"]
-texture = ExtResource("5_cqjrg")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_afec1"]
-sources/0 = SubResource("TileSetAtlasSource_e2xy7")
-sources/1 = SubResource("TileSetAtlasSource_fimr5")
-sources/2 = SubResource("TileSetAtlasSource_u7cqb")
+[ext_resource type="TileSet" uid="uid://76424pbkqbev" path="res://Scenes/Worlds/Spaceeee.tres" id="2_wpwbt"]
 
 [sub_resource type="Animation" id="Animation_ijp5w"]
 resource_name = "Fade"
@@ -43,10 +14,10 @@ tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-1920, 0)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -67,10 +38,22 @@ tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.163524, 0.330191),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_q4dkv"]
@@ -83,10 +66,10 @@ tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.29686, 1.49686, 1.73333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-960, 0), Vector2(-1920, 0)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -95,70 +78,70 @@ tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.29686),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0]
+"values": []
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Options:position")
+tracks/2/path = NodePath("AnimationPlayer/Title/Options:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.06667, 1.33333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 740)]
+"values": []
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Options:rotation")
+tracks/3/path = NodePath("AnimationPlayer/Title/Options:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.33019),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0]
+"values": []
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Play:scale")
+tracks/4/path = NodePath("AnimationPlayer/Title/Play:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.233333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(10, 10)]
+"values": []
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/Play:position")
+tracks/5/path = NodePath("AnimationPlayer/Title/Play:position")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.263524, 1.13019),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 540), Vector2(0, 540)]
+"values": []
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/Options:scale")
+tracks/6/path = NodePath("AnimationPlayer/Title/Options:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.33019),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(10, 10)]
+"values": []
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -167,22 +150,22 @@ tracks/7/path = NodePath("AnimationPlayer/ColorRect:scale")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.3, 1.56352, 1.69686, 1.93019),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+"values": []
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AnimationPlayer/Play:rotation")
+tracks/8/path = NodePath("AnimationPlayer/Title/Play:rotation")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.263524, 0.463524, 0.863524, 1.06352),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0, 1.48353, 4.9358, 6.28319]
+"values": []
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -191,10 +174,10 @@ tracks/9/path = NodePath("AnimationPlayer/Title:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.263524),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(10, 10)]
+"values": []
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -203,10 +186,10 @@ tracks/10/path = NodePath("AnimationPlayer/Title:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0.263524),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 120)]
+"values": []
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -215,10 +198,10 @@ tracks/11/path = NodePath("AnimationPlayer/Title:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.263524),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0]
+"values": []
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -227,34 +210,34 @@ tracks/12/path = NodePath("AnimationPlayer/Title:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(1.49686, 1.55552),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": []
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("AnimationPlayer/Play:modulate")
+tracks/13/path = NodePath("AnimationPlayer/Title/Play:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(1.46352),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": []
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("AnimationPlayer/Options:modulate")
+tracks/14/path = NodePath("AnimationPlayer/Title/Options:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(1.06352, 1.33019),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_cp80i"]
@@ -297,189 +280,6 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_nwwvf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-94, -183)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Options:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-30, -104)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Options:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Play:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/Play:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-22, -120)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/Options:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("AnimationPlayer/ColorRect:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3.45144, 3.18841)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AnimationPlayer/Play:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("AnimationPlayer/Title:scale")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("AnimationPlayer/Title:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-87, -151)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("AnimationPlayer/Title:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("AnimationPlayer/Title:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("AnimationPlayer/Play:modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("AnimationPlayer/Options:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_wsi5b"]
 resource_name = "PlayButton"
 tracks/0/type = "value"
@@ -497,7 +297,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Play:position")
+tracks/1/path = NodePath("AnimationPlayer/Title/Play:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -509,7 +309,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Options:position")
+tracks/2/path = NodePath("AnimationPlayer/Title/Options:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -545,7 +345,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/Options:modulate")
+tracks/5/path = NodePath("AnimationPlayer/Title/Options:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -555,13 +355,381 @@ tracks/5/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_nwwvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, -9.08333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Title:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Title:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Title/Play:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Title/Play:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Title/Play:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Title/Play:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 8.25)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Title/Options:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/Title/Options:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/Title/Options:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationPlayer/Title/Options:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.58333, 21.75)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimationPlayer/ColorRect:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-198, -133)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.224e+08, 1.321e+08)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wpwbt"]
+resource_name = "Startup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, -422), Vector2(2, 319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Title:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Title:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Title/Play:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1, 1.15544),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Title/Play:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.18877),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Title/Play:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.18877),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Title/Play:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.864349, 1.18877),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.25, -9.17858), Vector2(0.25, 15)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Title/Options:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.43333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/Title/Options:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/Title/Options:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationPlayer/Title/Options:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.58333, 8.16667), Vector2(2.583, 30)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimationPlayer/ColorRect:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.53333, 1.56667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-198, -133), Vector2(2681, 1066)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.224e+08, 1.321e+08)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.2, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cp80i"]
 _data = {
 &"Fade": SubResource("Animation_ijp5w"),
 &"Intro": SubResource("Animation_q4dkv"),
 &"Options": SubResource("Animation_cp80i"),
 &"PlayButton": SubResource("Animation_wsi5b"),
-&"RESET": SubResource("Animation_nwwvf")
+&"RESET": SubResource("Animation_nwwvf"),
+&"Startup": SubResource("Animation_wpwbt")
 }
 
 [node name="MainMenu" type="Control"]
@@ -574,13 +742,15 @@ grow_vertical = 2
 script = ExtResource("1_i26rj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-visible = false
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAdAAkAAQABAAEAAAAqAAkAAQABAAEAAAAqAA8AAQABAAEAAAAdAA8AAQABAAEAAAAdAAoAAQABAAEAAAAdAAsAAQABAAEAAAAdAAwAAQABAAEAAAAdAA0AAQABAAEAAAAdAA4AAQABAAEAAAAeAAkAAQABAAEAAAAeAAoAAQAAAAAAAAAeAAsAAQAAAAEAABAeAAwAAQAAAAEAABAeAA0AAQAAAAEAABAeAA4AAQAAAAEAABAeAA8AAQAAAAAAACAfAAkAAQABAAEAAAAfAAoAAQABAAAAACAfAAsAAgABAAAAAAAfAAwAAgABAAEAAAAfAA0AAgAAAAEAAAAfAA4AAgAAAAEAAAAfAA8AAQABAAAAAAAgAAkAAQABAAEAAAAgAAoAAQABAAAAACAgAAsAAgABAAEAAAAgAAwAAgABAAAAAAAgAA0AAgAAAAEAAAAgAA4AAgABAAAAAAAgAA8AAQABAAAAAAAhAAkAAQABAAEAAAAhAAoAAQABAAAAACAhAAsAAgABAAAAAAAhAAwAAgAAAAEAAAAhAA0AAgABAAEAAAAhAA4AAgAAAAEAAAAhAA8AAQABAAAAAAAiAAkAAQABAAEAAAAiAAoAAQABAAAAACAiAAsAAgAAAAEAAAAiAAwAAgABAAEAAAAiAA0AAgABAAEAAAAiAA4AAgABAAEAAAAiAA8AAQABAAAAAAAjAAkAAQABAAEAAAAjAAoAAQABAAAAACAjAAsAAgABAAAAAAAjAAwAAgABAAAAAAAjAA0AAgABAAEAAAAjAA4AAgAAAAEAAAAjAA8AAQABAAAAAAAkAAkAAQABAAEAAAAkAAoAAQABAAAAACAkAAsAAgABAAAAAAAkAAwAAgAAAAEAAAAkAA0AAgAAAAEAAAAkAA4AAgABAAAAAAAkAA8AAQABAAAAAAAlAAkAAQABAAEAAAAlAAoAAQABAAAAACAlAAsAAgABAAEAAAAlAAwAAgAAAAEAAAAlAA0AAgAAAAEAAAAlAA4AAgABAAAAAAAlAA8AAQABAAAAAAAmAAkAAQABAAEAAAAmAAoAAQABAAAAACAmAAsAAgABAAAAAAAmAAwAAgABAAEAAAAmAA0AAgABAAEAAAAmAA4AAgAAAAEAAAAmAA8AAQABAAAAAAAnAAkAAQABAAEAAAAnAAoAAQABAAAAACAnAAsAAgABAAEAAAAnAAwAAgABAAAAAAAnAA0AAgABAAEAAAAnAA4AAgABAAAAAAAnAA8AAQABAAAAAAAoAAkAAQABAAEAAAAoAAoAAQABAAAAACAoAAsAAgAAAAEAAAAoAAwAAgAAAAEAAAAoAA0AAgAAAAEAAAAoAA4AAgAAAAEAAAAoAA8AAQABAAAAAAApAAkAAQABAAEAAAApAAoAAQAAAAAAABApAAsAAQAAAAEAAAApAAwAAQAAAAEAAAApAA0AAQAAAAEAAAApAA4AAQAAAAEAAAApAA8AAQAAAAAAADAqAAoAAQABAAEAAAAqAAsAAQABAAEAAAAqAAwAAQABAAEAAAAqAA0AAQABAAEAAAAqAA4AAQABAAEAAAAdABAAAQABAAEAAAAeABAAAQABAAEAAAAfABAAAQABAAEAAAAgABAAAQABAAEAAAAhABAAAQABAAEAAAAiABAAAQABAAEAAAAjABAAAQABAAEAAAAkABAAAQABAAEAAAAlABAAAQABAAEAAAAmABAAAQABAAEAAAAnABAAAQABAAEAAAAoABAAAQABAAEAAAApABAAAQABAAEAAAAqABAAAQABAAEAAAArAAkAAQABAAEAAAArAAoAAQABAAEAAAArAAsAAQABAAEAAAArAAwAAQABAAEAAAArAA0AAQABAAEAAAArAA4AAQABAAEAAAArAA8AAQABAAEAAAArABAAAQABAAEAAAAsAAkAAQABAAEAAAAsAAoAAQABAAEAAAAsAAsAAQABAAEAAAAsAAwAAQABAAEAAAAsAA0AAQABAAEAAAAsAA4AAQABAAEAAAAsAA8AAQABAAEAAAAsABAAAQABAAEAAAAtAAkAAQABAAEAAAAtAAoAAQABAAEAAAAtAAsAAQABAAEAAAAtAAwAAQABAAEAAAAtAA0AAQABAAEAAAAtAA4AAQABAAEAAAAtAA8AAQABAAEAAAAtABAAAQABAAEAAAAuAAkAAQABAAEAAAAuAAoAAQABAAEAAAAuAAsAAQABAAEAAAAuAAwAAQABAAEAAAAuAA0AAQABAAEAAAAuAA4AAQABAAEAAAAuAA8AAQABAAEAAAAuABAAAQABAAEAAAAZAAkAAQABAAEAAAAZAAoAAQABAAEAAAAZAAsAAQABAAEAAAAZAAwAAQABAAEAAAAZAA0AAQABAAEAAAAZAA4AAQABAAEAAAAZAA8AAQABAAEAAAAZABAAAQABAAEAAAAaAAkAAQABAAEAAAAaAAoAAQABAAEAAAAaAAsAAQABAAEAAAAaAAwAAQABAAEAAAAaAA0AAQABAAEAAAAaAA4AAQABAAEAAAAaAA8AAQABAAEAAAAaABAAAQABAAEAAAAbAAkAAQABAAEAAAAbAAoAAQABAAEAAAAbAAsAAQABAAEAAAAbAAwAAQABAAEAAAAbAA0AAQABAAEAAAAbAA4AAQABAAEAAAAbAA8AAQABAAEAAAAbABAAAQABAAEAAAAcAAkAAQABAAEAAAAcAAoAAQABAAEAAAAcAAsAAQABAAEAAAAcAAwAAQABAAEAAAAcAA0AAQABAAEAAAAcAA4AAQABAAEAAAAcAA8AAQABAAEAAAAcABAAAQABAAEAAAAZABEAAQABAAEAAAAZABIAAQABAAEAAAAZABMAAQABAAEAAAAZABQAAQABAAEAAAAaABEAAQABAAEAAAAaABIAAQABAAEAAAAaABMAAQABAAEAAAAaABQAAQABAAEAAAAbABEAAQABAAEAAAAbABIAAQABAAEAAAAbABMAAQABAAEAAAAbABQAAQABAAEAAAAcABEAAQABAAEAAAAcABIAAQABAAEAAAAcABMAAQABAAEAAAAcABQAAQABAAEAAAAdABEAAQABAAEAAAAdABIAAQABAAEAAAAdABMAAQABAAEAAAAdABQAAQABAAEAAAAeABEAAQABAAEAAAAeABIAAQABAAEAAAAeABMAAQABAAEAAAAeABQAAQABAAEAAAAfABEAAQABAAEAAAAfABIAAQABAAEAAAAfABMAAQABAAEAAAAfABQAAQABAAEAAAAgABEAAQABAAEAAAAgABIAAQABAAEAAAAgABMAAQABAAEAAAAgABQAAQABAAEAAAAhABEAAQABAAEAAAAhABIAAQABAAEAAAAhABMAAQABAAEAAAAhABQAAQABAAEAAAAiABEAAQABAAEAAAAiABIAAQABAAEAAAAiABMAAQABAAEAAAAiABQAAQABAAEAAAAjABEAAQABAAEAAAAjABIAAQABAAEAAAAjABMAAQABAAEAAAAjABQAAQABAAEAAAAkABEAAQABAAEAAAAkABIAAQABAAEAAAAkABMAAQABAAEAAAAkABQAAQABAAEAAAAlABEAAQABAAEAAAAlABIAAQABAAEAAAAlABMAAQABAAEAAAAlABQAAQABAAEAAAAmABEAAQABAAEAAAAmABIAAQABAAEAAAAmABMAAQABAAEAAAAmABQAAQABAAEAAAAnABEAAQABAAEAAAAnABIAAQABAAEAAAAnABMAAQABAAEAAAAnABQAAQABAAEAAAAoABEAAQABAAEAAAAoABIAAQABAAEAAAAoABMAAQABAAEAAAAoABQAAQABAAEAAAApABEAAQABAAEAAAApABIAAQABAAEAAAApABMAAQABAAEAAAApABQAAQABAAEAAAAqABEAAQABAAEAAAAqABIAAQABAAEAAAAqABMAAQABAAEAAAAqABQAAQABAAEAAAArABEAAQABAAEAAAArABIAAQABAAEAAAArABMAAQABAAEAAAArABQAAQABAAEAAAAsABEAAQABAAEAAAAsABIAAQABAAEAAAAsABMAAQABAAEAAAAsABQAAQABAAEAAAAtABEAAQABAAEAAAAtABIAAQABAAEAAAAtABMAAQABAAEAAAAtABQAAQABAAEAAAAuABEAAQABAAEAAAAuABIAAQABAAEAAAAuABMAAQABAAEAAAAuABQAAQABAAEAAAAZAAUAAQABAAEAAAAZAAYAAQABAAEAAAAZAAcAAQABAAEAAAAZAAgAAQABAAEAAAAaAAUAAQABAAEAAAAaAAYAAQABAAEAAAAaAAcAAQABAAEAAAAaAAgAAQABAAEAAAAbAAUAAQABAAEAAAAbAAYAAQABAAEAAAAbAAcAAQABAAEAAAAbAAgAAQABAAEAAAAcAAUAAQABAAEAAAAcAAYAAQABAAEAAAAcAAcAAQABAAEAAAAcAAgAAQABAAEAAAAdAAUAAQABAAEAAAAdAAYAAQABAAEAAAAdAAcAAQABAAEAAAAdAAgAAQABAAEAAAAeAAUAAQABAAEAAAAeAAYAAQABAAEAAAAeAAcAAQABAAEAAAAeAAgAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAfAAcAAQABAAEAAAAfAAgAAQABAAEAAAAgAAUAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAgAAgAAQABAAEAAAAhAAUAAQABAAEAAAAhAAYAAQABAAEAAAAhAAcAAQABAAEAAAAhAAgAAQABAAEAAAAiAAUAAQABAAEAAAAiAAYAAQABAAEAAAAiAAcAAQABAAEAAAAiAAgAAQABAAEAAAAjAAUAAQABAAEAAAAjAAYAAQABAAEAAAAjAAcAAQABAAEAAAAjAAgAAQABAAEAAAAkAAUAAQABAAEAAAAkAAYAAQABAAEAAAAkAAcAAQABAAEAAAAkAAgAAQABAAEAAAAlAAUAAQABAAEAAAAlAAYAAQABAAEAAAAlAAcAAQABAAEAAAAlAAgAAQABAAEAAAAmAAUAAQABAAEAAAAmAAYAAQABAAEAAAAmAAcAAQABAAEAAAAmAAgAAQABAAEAAAAnAAUAAQABAAEAAAAnAAYAAQABAAEAAAAnAAcAAQABAAEAAAAnAAgAAQABAAEAAAAoAAUAAQABAAEAAAAoAAYAAQABAAEAAAAoAAcAAQABAAEAAAAoAAgAAQABAAEAAAApAAUAAQABAAEAAAApAAYAAQABAAEAAAApAAcAAQABAAEAAAApAAgAAQABAAEAAAAqAAUAAQABAAEAAAAqAAYAAQABAAEAAAAqAAcAAQABAAEAAAAqAAgAAQABAAEAAAArAAUAAQABAAEAAAArAAYAAQABAAEAAAArAAcAAQABAAEAAAArAAgAAQABAAEAAAAsAAUAAQABAAEAAAAsAAYAAQABAAEAAAAsAAcAAQABAAEAAAAsAAgAAQABAAEAAAAtAAUAAQABAAEAAAAtAAYAAQABAAEAAAAtAAcAAQABAAEAAAAtAAgAAQABAAEAAAAuAAUAAQABAAEAAAAuAAYAAQABAAEAAAAuAAcAAQABAAEAAAAuAAgAAQABAAEAAAAvAAUAAQABAAEAAAAvAAYAAQABAAEAAAAvAAcAAQABAAEAAAAvAAgAAQABAAEAAAAvAAkAAQABAAEAAAAvAAoAAQABAAEAAAAvAAsAAQABAAEAAAAvAAwAAQABAAEAAAAvAA0AAQABAAEAAAAvAA4AAQABAAEAAAAvAA8AAQABAAEAAAAvABAAAQABAAEAAAAvABEAAQABAAEAAAAvABIAAQABAAEAAAAvABMAAQABAAEAAAAvABQAAQABAAEAAAAwAAUAAQABAAEAAAAwAAYAAQABAAEAAAAwAAcAAQABAAEAAAAwAAgAAQABAAEAAAAwAAkAAQABAAEAAAAwAAoAAQABAAEAAAAwAAsAAQABAAEAAAAwAAwAAQABAAEAAAAwAA0AAQABAAEAAAAwAA4AAQABAAEAAAAwAA8AAQABAAEAAAAwABAAAQABAAEAAAAwABEAAQABAAEAAAAwABIAAQABAAEAAAAwABMAAQABAAEAAAAwABQAAQABAAEAAAAXAAUAAQABAAEAAAAXAAYAAQABAAEAAAAXAAcAAQABAAEAAAAXAAgAAQABAAEAAAAXAAkAAQABAAEAAAAXAAoAAQABAAEAAAAXAAsAAQABAAEAAAAXAAwAAQABAAEAAAAXAA0AAQABAAEAAAAXAA4AAQABAAEAAAAXAA8AAQABAAEAAAAXABAAAQABAAEAAAAXABEAAQABAAEAAAAXABIAAQABAAEAAAAXABMAAQABAAEAAAAXABQAAQABAAEAAAAYAAUAAQABAAEAAAAYAAYAAQABAAEAAAAYAAcAAQABAAEAAAAYAAgAAQABAAEAAAAYAAkAAQABAAEAAAAYAAoAAQABAAEAAAAYAAsAAQABAAEAAAAYAAwAAQABAAEAAAAYAA0AAQABAAEAAAAYAA4AAQABAAEAAAAYAA8AAQABAAEAAAAYABAAAQABAAEAAAAYABEAAQABAAEAAAAYABIAAQABAAEAAAAYABMAAQABAAEAAAAYABQAAQABAAEAAAA=")
-tile_set = SubResource("TileSet_afec1")
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAdAAkAAAABAAEAAAAdAA8AAAAAAAEAAAAdAAoAAAAAAAEAAAAdAAsAAAAAAAEAAAAdAAwAAAAAAAEAAAAdAA0AAAABAAAAAAAdAA4AAAABAAEAAAAeAAkAAQAAAAEAAAAeAAoAAQAAAAEAAAAeAAsAAQAAAAEAAAAeAAwAAQAAAAEAAAAeAA0AAQAAAAEAAAAeAA4AAQAAAAEAAAAeAA8AAQAAAAEAAAAfAAkAAQABAAEAAAAfAAoAAQABAAEAAAAfAAsAAQABAAEAAAAfAAwAAQABAAEAAAAfAA0AAQABAAEAAAAfAA4AAQABAAEAAAAfAA8AAQABAAEAAAAgAAkAAQABAAEAAAAgAAoAAQABAAEAAAAgAAsAAQABAAEAAAAgAAwAAQABAAEAAAAgAA0AAQABAAEAAAAgAA4AAQABAAEAAAAgAA8AAQABAAEAAAAhAAkAAQABAAEAAAAhAAoAAQABAAEAAAAhAAsAAQABAAEAAAAhAAwAAQABAAEAAAAhAA0AAQABAAEAAAAhAA4AAQABAAEAAAAhAA8AAQABAAEAAAAdABAAAAABAAEAAAAeABAAAQAAAAEAAAAfABAAAQABAAEAAAAgABAAAQABAAEAAAAhABAAAQABAAEAAAAZAAkAAAAAAAEAAAAZAAoAAAABAAEAAAAZAAsAAAABAAEAAAAZAAwAAAABAAAAAAAZAA0AAAABAAEAAAAZAA4AAAABAAEAAAAZAA8AAAAAAAEAAAAZABAAAAAAAAEAAAAaAAkAAAAAAAEAAAAaAAoAAAABAAEAAAAaAAsAAAAAAAEAAAAaAAwAAAABAAEAAAAaAA0AAAAAAAEAAAAaAA4AAAAAAAEAAAAaAA8AAAABAAEAAAAaABAAAAAAAAEAAAAbAAkAAAAAAAEAAAAbAAoAAAAAAAEAAAAbAAsAAAAAAAEAAAAbAAwAAAAAAAEAAAAbAA0AAAABAAEAAAAbAA4AAAABAAEAAAAbAA8AAAAAAAEAAAAbABAAAAABAAEAAAAcAAkAAAABAAEAAAAcAAoAAAABAAEAAAAcAAsAAAABAAEAAAAcAAwAAAABAAEAAAAcAA0AAAABAAEAAAAcAA4AAAABAAEAAAAcAA8AAAABAAEAAAAcABAAAAABAAEAAAAZABEAAQABAAAAAAAZABIAAQABAAEAAAAZABMAAQABAAEAAAAZABQAAQABAAEAAAAaABEAAQABAAAAAAAaABIAAQABAAEAAAAaABMAAQABAAEAAAAaABQAAQABAAEAAAAbABEAAQABAAAAAAAbABIAAQABAAEAAAAbABMAAQABAAEAAAAbABQAAQABAAEAAAAcABEAAQABAAAAAAAcABIAAQABAAEAAAAcABMAAQABAAEAAAAcABQAAQABAAEAAAAdABEAAQABAAAAAAAdABIAAQABAAEAAAAdABMAAQABAAEAAAAdABQAAQABAAEAAAAeABEAAQAAAAAAADAeABIAAQABAAEAAAAeABMAAQABAAEAAAAeABQAAQABAAEAAAAfABEAAQABAAEAAAAfABIAAQABAAEAAAAfABMAAQABAAEAAAAfABQAAQABAAEAAAAgABEAAQABAAEAAAAgABIAAQABAAEAAAAgABMAAQABAAEAAAAgABQAAQABAAEAAAAhABEAAQABAAEAAAAhABIAAQABAAEAAAAhABMAAQABAAEAAAAhABQAAQABAAEAAAAZAAUAAAABAAEAAAAZAAYAAAAAAAEAAAAZAAcAAAAAAAEAAAAZAAgAAAAAAAEAAAAaAAUAAAAAAAEAAAAaAAYAAAABAAEAAAAaAAcAAAABAAEAAAAaAAgAAAAAAAAAAAAbAAUAAAAAAAEAAAAbAAYAAAABAAEAAAAbAAcAAAABAAEAAAAbAAgAAAABAAEAAAAcAAUAAAAAAAAAAAAcAAYAAAAAAAEAAAAcAAcAAAAAAAEAAAAcAAgAAAABAAEAAAAdAAUAAAABAAEAAAAdAAYAAAABAAEAAAAdAAcAAAABAAAAAAAdAAgAAAAAAAEAAAAeAAUAAQAAAAEAAAAeAAYAAQAAAAEAAAAeAAcAAQAAAAEAAAAeAAgAAQAAAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAfAAcAAQABAAEAAAAfAAgAAQABAAEAAAAgAAUAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAgAAgAAQABAAEAAAAhAAUAAQABAAEAAAAhAAYAAQABAAEAAAAhAAcAAQABAAEAAAAhAAgAAQABAAEAAAAXAAUAAAAAAAEAAAAXAAYAAAABAAEAAAAXAAcAAAAAAAAAAAAXAAgAAAAAAAEAAAAXAAkAAAABAAEAAAAXAAoAAAABAAEAAAAXAAsAAAAAAAEAAAAXAAwAAAABAAEAAAAXAA0AAAAAAAEAAAAXAA4AAAAAAAEAAAAXAA8AAAAAAAEAAAAXABAAAAABAAEAAAAXABEAAQABAAAAAAAXABIAAQABAAEAAAAXABMAAQABAAEAAAAXABQAAQABAAEAAAAYAAUAAAAAAAEAAAAYAAYAAAAAAAEAAAAYAAcAAAABAAEAAAAYAAgAAAAAAAEAAAAYAAkAAAABAAEAAAAYAAoAAAAAAAEAAAAYAAsAAAAAAAEAAAAYAAwAAAABAAEAAAAYAA0AAAAAAAEAAAAYAA4AAAAAAAEAAAAYAA8AAAAAAAAAAAAYABAAAAABAAEAAAAYABEAAQABAAAAAAAYABIAAQABAAEAAAAYABMAAQABAAEAAAAYABQAAQABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAAAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAAAAAAAAAcAAAAAAAEAAAAAAAgAAAABAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAAAAAEAAAABAAUAAAABAAEAAAABAAYAAAAAAAEAAAABAAcAAAAAAAEAAAABAAgAAAAAAAEAAAABAAkAAAABAAEAAAABAAoAAAABAAEAAAABAAsAAAAAAAAAAAABAAwAAAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAEAAAACAAIAAAAAAAEAAAACAAMAAAABAAEAAAACAAQAAAAAAAAAAAACAAUAAAAAAAEAAAACAAYAAAAAAAEAAAACAAcAAAAAAAEAAAACAAgAAAAAAAEAAAACAAkAAAAAAAEAAAACAAoAAAAAAAEAAAACAAsAAAABAAAAAAACAAwAAAAAAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAAAAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAAAAAEAAAADAAYAAAAAAAEAAAADAAcAAAAAAAEAAAADAAgAAAAAAAEAAAADAAkAAAABAAEAAAADAAoAAAAAAAEAAAADAAsAAAABAAEAAAADAAwAAAAAAAEAAAAEAAAAAAABAAEAAAAEAAEAAAAAAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAEAAAAEAAYAAAABAAEAAAAEAAcAAAAAAAEAAAAEAAgAAAABAAEAAAAEAAkAAAAAAAEAAAAEAAoAAAABAAEAAAAEAAsAAAAAAAEAAAAEAAwAAAAAAAEAAAAFAAAAAAABAAEAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAAAAAEAAAAFAAcAAAAAAAEAAAAFAAgAAAABAAEAAAAFAAkAAAAAAAEAAAAFAAoAAAAAAAEAAAAFAAsAAAAAAAEAAAAFAAwAAAAAAAEAAAAGAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAIAAAABAAEAAAAGAAMAAAAAAAEAAAAGAAQAAAAAAAEAAAAGAAUAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAGAAoAAAAAAAEAAAAGAAsAAAABAAEAAAAGAAwAAAABAAEAAAAHAAAAAAAAAAEAAAAHAAEAAAAAAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAAAAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAAAAAEAAAAHAAkAAAABAAEAAAAHAAoAAAAAAAAAAAAHAAsAAAABAAEAAAAHAAwAAAABAAEAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAAAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAAAAAEAAAAIAAUAAAABAAEAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAIAAgAAAABAAEAAAAIAAkAAAABAAEAAAAIAAoAAAABAAEAAAAIAAsAAAABAAEAAAAIAAwAAAABAAEAAAAJAAAAAAAAAAEAAAAJAAEAAAAAAAEAAAAJAAIAAAABAAEAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAEAAAAJAAUAAAAAAAAAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAAAAAEAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAEAAAAKAAAAAAAAAAEAAAAKAAEAAAABAAEAAAAKAAIAAAAAAAEAAAAKAAMAAAAAAAEAAAAKAAQAAAAAAAAAAAAKAAUAAAABAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAEAAAAKAAgAAAABAAEAAAAKAAkAAAABAAEAAAAKAAoAAAABAAEAAAAKAAsAAAAAAAEAAAAKAAwAAAAAAAEAAAALAAAAAAABAAAAAAALAAEAAAAAAAEAAAALAAIAAAAAAAAAAAALAAMAAAABAAEAAAALAAQAAAABAAAAAAALAAUAAAAAAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAAAAAALAAgAAAAAAAEAAAALAAkAAAAAAAEAAAALAAoAAAABAAEAAAALAAsAAAAAAAAAAAALAAwAAAABAAEAAAAMAAAAAAABAAEAAAAMAAEAAAAAAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAAAAAEAAAAMAAYAAAABAAEAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAEAAAAMAAoAAAABAAEAAAAMAAsAAAAAAAEAAAAMAAwAAAAAAAEAAAANAAAAAAABAAEAAAANAAEAAAAAAAEAAAANAAIAAAAAAAEAAAANAAMAAAABAAEAAAANAAQAAAAAAAEAAAANAAUAAAAAAAEAAAANAAYAAAAAAAEAAAANAAcAAAAAAAEAAAANAAgAAAAAAAEAAAANAAkAAAAAAAEAAAANAAoAAAAAAAEAAAANAAsAAAAAAAAAAAANAAwAAAABAAEAAAAOAAAAAAABAAAAAAAOAAEAAAABAAEAAAAOAAIAAAABAAAAAAAOAAMAAAAAAAEAAAAOAAQAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAABAAEAAAAOAAcAAAAAAAEAAAAOAAgAAAABAAEAAAAOAAkAAAAAAAEAAAAOAAoAAAABAAEAAAAOAAsAAAABAAEAAAAOAAwAAAABAAEAAAAPAAAAAAAAAAEAAAAPAAEAAAABAAEAAAAPAAIAAAAAAAEAAAAPAAMAAAAAAAEAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAAAAAAPAAoAAAAAAAEAAAAPAAsAAAAAAAEAAAAPAAwAAAABAAEAAAAQAAAAAAABAAEAAAAQAAEAAAABAAAAAAAQAAIAAAAAAAEAAAAQAAMAAAABAAEAAAAQAAQAAAABAAEAAAAQAAUAAAABAAEAAAAQAAYAAAAAAAEAAAAQAAcAAAABAAEAAAAQAAgAAAAAAAEAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAAAAAAQAAwAAAAAAAEAAAARAAAAAAAAAAEAAAARAAEAAAAAAAEAAAARAAIAAAAAAAAAAAARAAMAAAAAAAEAAAARAAQAAAAAAAEAAAARAAUAAAABAAEAAAARAAYAAAABAAEAAAARAAcAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAAAAAARAAoAAAAAAAEAAAARAAsAAAAAAAAAAAARAAwAAAABAAEAAAASAAAAAAAAAAAAAAASAAEAAAAAAAEAAAASAAIAAAAAAAEAAAASAAMAAAABAAEAAAASAAQAAAABAAEAAAASAAUAAAAAAAEAAAASAAYAAAAAAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAAAAAEAAAASAAsAAAAAAAEAAAASAAwAAAABAAEAAAATAAAAAAAAAAEAAAATAAEAAAABAAEAAAATAAIAAAABAAAAAAATAAMAAAABAAEAAAATAAQAAAAAAAEAAAATAAUAAAABAAEAAAATAAYAAAAAAAEAAAATAAcAAAABAAEAAAATAAgAAAAAAAEAAAATAAkAAAAAAAEAAAATAAoAAAAAAAEAAAATAAsAAAAAAAEAAAATAAwAAAAAAAEAAAAUAAAAAAAAAAEAAAAUAAEAAAABAAEAAAAUAAIAAAABAAEAAAAUAAMAAAAAAAEAAAAUAAQAAAAAAAEAAAAUAAUAAAAAAAEAAAAUAAYAAAABAAEAAAAUAAcAAAAAAAAAAAAUAAgAAAABAAEAAAAUAAkAAAAAAAEAAAAUAAoAAAAAAAEAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAAAAAAAAAEAAAAVAAEAAAAAAAEAAAAVAAIAAAABAAEAAAAVAAMAAAAAAAEAAAAVAAQAAAAAAAEAAAAVAAUAAAAAAAEAAAAVAAYAAAABAAEAAAAVAAcAAAAAAAEAAAAVAAgAAAAAAAEAAAAVAAkAAAABAAEAAAAVAAoAAAABAAEAAAAVAAsAAAAAAAAAAAAVAAwAAAAAAAEAAAAWAAAAAAABAAEAAAAWAAEAAAABAAEAAAAWAAIAAAABAAEAAAAWAAMAAAAAAAEAAAAWAAQAAAABAAEAAAAWAAUAAAAAAAEAAAAWAAYAAAABAAEAAAAWAAcAAAAAAAEAAAAWAAgAAAABAAEAAAAWAAkAAAAAAAEAAAAWAAoAAAABAAEAAAAWAAsAAAABAAEAAAAWAAwAAAABAAEAAAAXAAAAAAABAAEAAAAXAAEAAAABAAEAAAAXAAIAAAAAAAAAAAAXAAMAAAAAAAEAAAAXAAQAAAAAAAEAAAAYAAAAAAAAAAEAAAAYAAEAAAAAAAEAAAAYAAIAAAABAAEAAAAYAAMAAAAAAAEAAAAYAAQAAAABAAEAAAAZAAAAAAAAAAEAAAAZAAEAAAAAAAEAAAAZAAIAAAAAAAEAAAAZAAMAAAAAAAAAAAAZAAQAAAABAAEAAAAaAAAAAAAAAAEAAAAaAAEAAAABAAEAAAAaAAIAAAAAAAEAAAAaAAMAAAABAAEAAAAaAAQAAAAAAAEAAAAbAAAAAAAAAAEAAAAbAAEAAAAAAAEAAAAbAAIAAAAAAAEAAAAbAAMAAAABAAEAAAAbAAQAAAABAAAAAAAcAAAAAAABAAAAAAAcAAEAAAABAAEAAAAcAAIAAAABAAEAAAAcAAMAAAAAAAEAAAAcAAQAAAABAAEAAAAdAAAAAAAAAAEAAAAdAAEAAAABAAEAAAAdAAIAAAAAAAEAAAAdAAMAAAABAAEAAAAdAAQAAAABAAEAAAAAAA0AAAABAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAABAAEAAAABAA0AAAABAAEAAAABAA4AAAABAAAAAAABAA8AAAABAAEAAAABABAAAAABAAEAAAACAA0AAAAAAAAAAAACAA4AAAAAAAEAAAACAA8AAAAAAAEAAAACABAAAAABAAEAAAADAA0AAAABAAEAAAADAA4AAAABAAEAAAADAA8AAAAAAAEAAAADABAAAAABAAEAAAAEAA0AAAABAAEAAAAEAA4AAAAAAAEAAAAEAA8AAAAAAAEAAAAEABAAAAABAAEAAAAFAA0AAAAAAAEAAAAFAA4AAAABAAEAAAAFAA8AAAAAAAEAAAAFABAAAAABAAEAAAAGAA0AAAABAAEAAAAGAA4AAAABAAEAAAAGAA8AAAAAAAEAAAAGABAAAAAAAAEAAAAHAA0AAAABAAEAAAAHAA4AAAAAAAEAAAAHAA8AAAABAAEAAAAHABAAAAAAAAEAAAAIAA0AAAABAAEAAAAIAA4AAAABAAEAAAAIAA8AAAABAAEAAAAIABAAAAABAAEAAAAJAA0AAAABAAEAAAAJAA4AAAAAAAEAAAAJAA8AAAAAAAEAAAAJABAAAAAAAAEAAAAKAA0AAAAAAAAAAAAKAA4AAAABAAEAAAAKAA8AAAABAAEAAAAKABAAAAAAAAEAAAALAA0AAAABAAAAAAALAA4AAAABAAEAAAALAA8AAAAAAAEAAAALABAAAAAAAAEAAAAMAA0AAAAAAAEAAAAMAA4AAAAAAAEAAAAMAA8AAAABAAEAAAAMABAAAAABAAEAAAANAA0AAAAAAAEAAAANAA4AAAAAAAEAAAANAA8AAAAAAAEAAAANABAAAAABAAAAAAAOAA0AAAAAAAEAAAAOAA4AAAABAAEAAAAOAA8AAAABAAAAAAAOABAAAAAAAAEAAAAPAA0AAAAAAAEAAAAPAA4AAAABAAEAAAAPAA8AAAABAAEAAAAPABAAAAABAAEAAAAQAA0AAAAAAAEAAAAQAA4AAAAAAAEAAAAQAA8AAAABAAEAAAAQABAAAAAAAAEAAAARAA0AAAAAAAEAAAARAA4AAAABAAEAAAARAA8AAAAAAAEAAAARABAAAAAAAAEAAAASAA0AAAABAAEAAAASAA4AAAABAAEAAAASAA8AAAABAAAAAAASABAAAAABAAEAAAATAA0AAAAAAAEAAAATAA4AAAAAAAEAAAATAA8AAAAAAAEAAAATABAAAAABAAEAAAAUAA0AAAAAAAEAAAAUAA4AAAAAAAEAAAAUAA8AAAAAAAEAAAAUABAAAAAAAAEAAAAVAA0AAAAAAAEAAAAVAA4AAAAAAAEAAAAVAA8AAAAAAAEAAAAVABAAAAABAAEAAAAWAA0AAAAAAAEAAAAWAA4AAAABAAEAAAAWAA8AAAAAAAEAAAAWABAAAAAAAAEAAAD8/wYAAQABAAEAAAD8/woAAQABAAEAAAD9/wsAAQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAEAAAD8/wMAAQABAAEAAAD8/wQAAQABAAEAAAD8/wUAAQABAAEAAAD8/wcAAQABAAEAAAD8/wgAAQABAAEAAAD8/wkAAQABAAEAAAD8/wsAAQABAAEAAAD8/wwAAQABAAEAAAD8/w0AAQABAAEAAAD8/w4AAQABAAEAAAD8/w8AAQABAAEAAAD8/xAAAQABAAEAAAD9/wAAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAD9/wMAAQABAAEAAAD9/wQAAQABAAEAAAD9/wUAAQABAAEAAAD9/wYAAQABAAEAAAD9/wcAAQABAAEAAAD9/wgAAQABAAEAAAD9/wkAAQABAAEAAAD9/woAAQABAAEAAAD9/wwAAQABAAEAAAD9/w0AAQABAAEAAAD9/w4AAQABAAEAAAD9/w8AAQABAAEAAAD9/xAAAQABAAEAAAD+/wAAAQABAAEAAAD+/wEAAQABAAEAAAD+/wIAAQABAAEAAAD+/wMAAQABAAEAAAD+/wQAAQABAAEAAAD+/wUAAQABAAEAAAD+/wYAAQABAAEAAAD+/wcAAQABAAEAAAD+/wgAAQABAAEAAAD+/wkAAQABAAEAAAD+/woAAQABAAEAAAD+/wsAAQABAAEAAAD+/wwAAQABAAEAAAD+/w0AAQABAAEAAAD+/w4AAQABAAEAAAD+/w8AAQABAAEAAAD+/xAAAQABAAEAAAAAAPz/AQABAAEAAAAAAP3/AQABAAEAAAAAAP7/AQABAAEAAAABAPz/AQABAAEAAAABAP3/AQABAAEAAAABAP7/AQABAAEAAAACAPz/AQABAAEAAAACAP3/AQABAAEAAAACAP7/AQABAAEAAAADAPz/AQABAAEAAAADAP3/AQABAAEAAAADAP7/AQABAAEAAAAEAPz/AQABAAEAAAAEAP3/AQABAAEAAAAEAP7/AQABAAEAAAAFAPz/AQABAAEAAAAFAP3/AQABAAEAAAAFAP7/AQABAAEAAAAGAPz/AQABAAEAAAAGAP3/AQABAAEAAAAGAP7/AQABAAEAAAAHAPz/AQABAAEAAAAHAP3/AQABAAEAAAAHAP7/AQABAAEAAAAIAPz/AQABAAEAAAAIAP3/AQABAAEAAAAIAP7/AQABAAEAAAAJAPz/AQABAAEAAAAJAP3/AQABAAEAAAAJAP7/AQABAAEAAAAKAPz/AQABAAEAAAAKAP3/AQABAAEAAAAKAP7/AQABAAEAAAALAPz/AQABAAEAAAALAP3/AQABAAEAAAALAP7/AQABAAEAAAAMAPz/AQABAAEAAAAMAP3/AQABAAEAAAAMAP7/AQABAAEAAAANAPz/AQABAAEAAAANAP3/AQABAAEAAAANAP7/AQABAAEAAAAOAPz/AQABAAEAAAAOAP3/AQABAAEAAAAOAP7/AQABAAEAAAAPAPz/AQABAAEAAAAPAP3/AQABAAEAAAAPAP7/AQABAAEAAAAQAPz/AQABAAEAAAAQAP3/AQABAAEAAAAQAP7/AQABAAEAAAARAPz/AQABAAEAAAARAP3/AQABAAEAAAARAP7/AQABAAEAAAASAPz/AQABAAEAAAASAP3/AQABAAEAAAASAP7/AQABAAEAAAATAPz/AQABAAEAAAATAP3/AQABAAEAAAATAP7/AQABAAEAAAAUAPz/AQABAAEAAAAUAP3/AQABAAEAAAAUAP7/AQABAAEAAAAVAPz/AQABAAEAAAAVAP3/AQABAAEAAAAVAP7/AQABAAEAAAAWAPz/AQABAAEAAAAWAP3/AQABAAEAAAAWAP7/AQABAAEAAAAXAPz/AQABAAEAAAAXAP3/AQABAAEAAAAXAP7/AQABAAEAAAAYAPz/AQABAAEAAAAYAP3/AQABAAEAAAAYAP7/AQABAAEAAAAZAPz/AQABAAEAAAAZAP3/AQABAAEAAAAZAP7/AQABAAEAAAAaAPz/AQABAAEAAAAaAP3/AQABAAEAAAAaAP7/AQABAAEAAAAbAPz/AQABAAEAAAAbAP3/AQABAAEAAAAbAP7/AQABAAEAAAAcAPz/AQABAAEAAAAcAP3/AQABAAEAAAAcAP7/AQABAAEAAAAdAPz/AQABAAEAAAAdAP3/AQABAAEAAAAdAP7/AQABAAEAAAD8//z/AQABAAEAAAD8//3/AQABAAEAAAD8//7/AQABAAEAAAD9//z/AQABAAEAAAD9//3/AQABAAEAAAD9//7/AQABAAEAAAD+//z/AQABAAEAAAD+//3/AQABAAEAAAD+//7/AQABAAEAAAD///z/AQABAAEAAAD///3/AQABAAEAAAD///7/AQABAAEAAAD8////AQABAAEAAAD9////AQABAAEAAAD+////AQABAAEAAAD8/xEAAQABAAEAAAD8/xIAAQABAAEAAAD9/xEAAQABAAEAAAD9/xIAAQABAAEAAAD+/xEAAQABAAEAAAD+/xIAAQABAAEAAAD8/xMAAQABAAEAAAD9/xMAAQABAAEAAAD+/xMAAQABAAEAAAD//xIAAQABAAEAAAD//xMAAQABAAEAAAAAABIAAQABAAEAAAAAABMAAQABAAEAAAABABIAAQABAAEAAAABABMAAQABAAEAAAACABIAAQABAAEAAAACABMAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAAEABIAAQABAAEAAAAEABMAAQABAAEAAAAFABIAAQABAAEAAAAFABMAAQABAAEAAAAGABIAAQABAAEAAAAGABMAAQABAAEAAAAHABIAAQABAAEAAAAHABMAAQABAAEAAAAIABIAAQABAAEAAAAIABMAAQABAAEAAAAJABIAAQABAAEAAAAJABMAAQABAAEAAAAKABIAAQABAAEAAAAKABMAAQABAAEAAAALABIAAQABAAEAAAALABMAAQABAAEAAAAMABIAAQABAAEAAAAMABMAAQABAAEAAAANABIAAQABAAEAAAANABMAAQABAAEAAAAOABIAAQABAAEAAAAOABMAAQABAAEAAAAPABIAAQABAAEAAAAPABMAAQABAAEAAAAQABIAAQABAAEAAAAQABMAAQABAAEAAAARABIAAQABAAEAAAARABMAAQABAAEAAAASABIAAQABAAEAAAASABMAAQABAAEAAAATABIAAQABAAEAAAATABMAAQABAAEAAAAUABIAAQABAAEAAAAUABMAAQABAAEAAAAVABIAAQABAAEAAAAVABMAAQABAAEAAAAWABIAAQABAAEAAAAWABMAAQABAAEAAAD8/xQAAQABAAEAAAD9/xQAAQABAAEAAAD+/xQAAQABAAEAAAD//xQAAQABAAEAAAAAABQAAQABAAEAAAABABQAAQABAAEAAAACABQAAQABAAEAAAADABQAAQABAAEAAAAEABQAAQABAAEAAAAFABQAAQABAAEAAAAGABQAAQABAAEAAAAHABQAAQABAAEAAAAIABQAAQABAAEAAAAJABQAAQABAAEAAAAKABQAAQABAAEAAAALABQAAQABAAEAAAAMABQAAQABAAEAAAANABQAAQABAAEAAAAOABQAAQABAAEAAAAPABQAAQABAAEAAAAQABQAAQABAAEAAAARABQAAQABAAEAAAASABQAAQABAAEAAAATABQAAQABAAEAAAAUABQAAQABAAEAAAAVABQAAQABAAEAAAAWABQAAQABAAEAAAAeAPz/AQABAAEAAAAeAP3/AQABAAEAAAAeAP7/AQABAAEAAAAfAPz/AQABAAEAAAAfAP3/AQABAAEAAAAfAP7/AQABAAEAAAAfAP//AQABAAEAAAAfAAAAAQABAAEAAAAfAAEAAQABAAEAAAAfAAIAAQABAAEAAAAfAAMAAQABAAEAAAAfAAQAAQABAAEAAAAgAPz/AQABAAEAAAAgAP3/AQABAAEAAAAgAP7/AQABAAEAAAAgAP//AQABAAEAAAAgAAAAAQABAAEAAAAgAAEAAQABAAEAAAAgAAIAAQABAAEAAAAgAAMAAQABAAEAAAAgAAQAAQABAAEAAAAhAPz/AQABAAEAAAAhAP3/AQABAAEAAAAhAP7/AQABAAEAAAAhAP//AQABAAEAAAAhAAAAAQABAAEAAAAhAAEAAQABAAEAAAAhAAIAAQABAAEAAAAhAAMAAQABAAEAAAAhAAQAAQABAAEAAAAAABEAAQABAAAAAAABABEAAQABAAAAAAACABEAAQABAAAAAAADABEAAQABAAAAAAAEABEAAQABAAAAAAAFABEAAQABAAAAAAAGABEAAQABAAAAAAAHABEAAQABAAAAAAAIABEAAQABAAAAAAAJABEAAQABAAAAAAAKABEAAQABAAAAAAALABEAAQABAAAAAAAMABEAAQABAAAAAAANABEAAQABAAAAAAAOABEAAQABAAAAAAAPABEAAQABAAAAAAAQABEAAQABAAAAAAARABEAAQABAAAAAAASABEAAQABAAAAAAATABEAAQABAAAAAAAUABEAAQABAAAAAAAVABEAAQABAAAAAAAWABEAAQABAAAAAAD//wAAAQAAAAEAABD//wEAAQAAAAEAABD//wIAAQAAAAEAABD//wMAAQAAAAEAABD//wQAAQAAAAEAABD//wUAAQAAAAEAABD//wYAAQAAAAEAABD//wcAAQAAAAEAABD//wgAAQAAAAEAABD//wkAAQAAAAEAABD//woAAQAAAAEAABD//wsAAQAAAAEAABD//wwAAQAAAAEAABD//w0AAQAAAAEAABD//w4AAQAAAAEAABD//w8AAQAAAAEAABD//xAAAQAAAAEAABAeAAAAAQAAAAEAAAAeAAEAAQAAAAEAAAAeAAIAAQAAAAEAAAAeAAMAAQAAAAEAAAAeAAQAAQAAAAEAAAAAAP//AQABAAAAACABAP//AQABAAAAACACAP//AQABAAAAACADAP//AQABAAAAACAEAP//AQABAAAAACAFAP//AQABAAAAACAGAP//AQABAAAAACAHAP//AQABAAAAACAIAP//AQABAAAAACAJAP//AQABAAAAACAKAP//AQABAAAAACALAP//AQABAAAAACAMAP//AQABAAAAACANAP//AQABAAAAACAOAP//AQABAAAAACAPAP//AQABAAAAACAQAP//AQABAAAAACARAP//AQABAAAAACASAP//AQABAAAAACATAP//AQABAAAAACAUAP//AQABAAAAACAVAP//AQABAAAAACAWAP//AQABAAAAACAXAP//AQABAAAAACAYAP//AQABAAAAACAZAP//AQABAAAAACAaAP//AQABAAAAACAbAP//AQABAAAAACAcAP//AQABAAAAACAdAP//AQABAAAAACD/////AQAAAAAAAAD//xEAAQAAAAAAAGAeAP//AQAAAAAAAFA=")
+tile_set = ExtResource("2_wpwbt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
 position = Vector2(960, 540)
+ignore_rotation = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -589,50 +759,47 @@ libraries = {
 
 [node name="Title" type="Label" parent="AnimationPlayer"]
 texture_filter = 1
-offset_left = -87.0
-offset_top = -151.0
-offset_right = 105.0
-offset_bottom = -141.0
+offset_left = 2.0
+offset_top = 319.0
+offset_right = 194.0
+offset_bottom = 329.0
 theme = ExtResource("2_eiy7p")
-text = "zip zap zoom"
+text = "Space Shooter 1989"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Play" type="Button" parent="AnimationPlayer"]
+[node name="Play" type="Button" parent="AnimationPlayer/Title"]
+z_index = 2
 texture_filter = 1
-offset_left = -22.0
-offset_top = -120.0
-offset_right = 170.0
-offset_bottom = -110.0
+layout_mode = 0
+offset_left = 0.25
+offset_top = 15.0
+offset_right = 192.25
+offset_bottom = 25.0
 theme = ExtResource("2_eiy7p")
 text = " play"
 icon_alignment = 1
 
-[node name="Options" type="Button" parent="AnimationPlayer"]
+[node name="Options" type="Button" parent="AnimationPlayer/Title"]
+z_index = 1
 texture_filter = 1
-offset_left = -30.0
-offset_top = -104.0
-offset_right = 162.0
-offset_bottom = -94.0
+layout_mode = 0
+offset_left = 2.583
+offset_top = 30.0
+offset_right = 194.583
+offset_bottom = 40.0
 theme = ExtResource("2_eiy7p")
 text = "Options"
 icon_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
-offset_left = -94.0
-offset_top = -183.0
-offset_right = 1826.0
-offset_bottom = 897.0
-scale = Vector2(3.45144, 3.18841)
+z_index = 3
+offset_left = -198.0
+offset_top = -133.0
+offset_right = 2.224e+08
+offset_bottom = 1.321e+08
+scale = Vector2(1e-05, 1e-05)
 color = Color(0, 0, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 1, 1)
-z_index = -2
-texture_filter = 1
-position = Vector2(960, 540)
-scale = Vector2(3, 3)
-texture = ExtResource("6_nwwvf")
-
-[connection signal="pressed" from="AnimationPlayer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="AnimationPlayer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="AnimationPlayer/Title/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="AnimationPlayer/Title/Options" to="." method="_on_options_pressed"]

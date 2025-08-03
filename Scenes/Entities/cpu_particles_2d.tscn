@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs1xeesx25jp4"]
+
+[ext_resource type="Texture2D" uid="uid://1mjs7ehcg8w7" path="res://Scenes/Worlds/Spark.png" id="1_6i4n8"]
+
+[sub_resource type="Curve" id="Curve_a1rq5"]
+_data = [Vector2(0, 1), 0.0, -3.58827, 0, 0, Vector2(1, 0), -0.46498, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+texture_filter = 1
+amount = 1
+texture = ExtResource("1_6i4n8")
+preprocess = 0.52
+speed_scale = 2.35
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 3.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_a1rq5")
+hue_variation_min = -1.0
+hue_variation_max = 1.0

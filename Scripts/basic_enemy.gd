@@ -17,6 +17,7 @@ var global_nav_poly = []
 var wander_timer = 0.0
 var wander_target = Vector2.ZERO
 const WANDER_INTERVAL = 1.5
+var animated_sprite
 
 func _ready():
 	# Restriction area
@@ -26,6 +27,10 @@ func _ready():
 
 	var map_rid = navigation_region.get_navigation_map()
 	navigation_agent.set_navigation_map(map_rid)
+	
+	animated_sprite = $AnimatedSprite2D
+	animated_sprite.play()  # Plays the default animation
+	animated_sprite.play("default")
 func wait_for_physics():
 	await get_tree().physics_frame
 	set_physics_process(true)

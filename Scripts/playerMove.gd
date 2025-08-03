@@ -14,12 +14,16 @@ extends CharacterBody2D
 var can_dash = true
 var Sprite
 var mouse_target_position = Vector2()
+var animated_sprite
 
 signal hit
 signal reset_wave
 
 func _ready():
 	Sprite = $Player
+	animated_sprite = $Player
+	animated_sprite.play()  # Plays the default animation
+	animated_sprite.play("move")
 	show()
 	
 func _physics_process(delta):

@@ -6,9 +6,9 @@
 line_spacing = 10.0
 font = ExtResource("1_xfoy2")
 font_size = 50
-outline_color = Color(1, 0.253584, 0.839661, 1)
+outline_color = Color(0.92549, 0.54902, 1, 1)
 shadow_size = 9
-shadow_color = Color(0.859243, 0.0435911, 0.523326, 1)
+shadow_color = Color(0.894118, 0.266667, 0.764706, 1)
 shadow_offset = Vector2(2.86, 2.45)
 
 [sub_resource type="Animation" id="Animation_vsjyd"]
@@ -56,23 +56,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
+z_index = 5
+texture_filter = 1
 layout_mode = 0
 offset_left = -3.0
-offset_top = -1092.0
 offset_right = 1916.0
-offset_bottom = -19.0
-text = "Game Name Here
+offset_bottom = 1073.0
+text = "Shorted-Out
 
 
 __ Created by __
 
-Ethanscharlie
-Golden404
-MajesticGenius101
-Note
+MajesticGenius101 - Programmer
+Golden404 - Artist/Programmer
+Ethanscharlie - Programmer
+Note - Music/SFX
 
-
-Score: 696969
 
 
 Thanks for playing!"
@@ -85,3 +84,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_vsjyd")
 }
 autoplay = "credits slide in"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 51.0
+offset_right = 1723.0
+offset_bottom = 1013.0
+color = Color(0.74902, 1, 1, 0.282353)

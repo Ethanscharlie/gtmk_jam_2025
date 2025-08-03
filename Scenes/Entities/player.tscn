@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=25 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://ct7lxbrr0vq7o" path="res://Textures/Death.png" id="2_2hnfo"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
-[ext_resource type="Script" uid="uid://ccm8f0papn8q1" path="res://Scenes/Entities/sparks.gd" id="5_ofjh0"]
-[ext_resource type="Texture2D" uid="uid://1mjs7ehcg8w7" path="res://Scenes/Worlds/Spark.png" id="7_ofjh0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
 radius = 23.0
@@ -132,15 +130,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="Curve" id="Curve_svftf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_a1rq5"]
-_data = [Vector2(0, 1), 0.0, -2.44053, 0, 0, Vector2(1, 0), -0.339685, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
@@ -158,13 +152,16 @@ texture_filter = 1
 position = Vector2(-7.689e-06, -7.56979e-06)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_p6fni")
+animation = &"death"
+frame = 1
+frame_progress = 0.36279
 
 [node name="Rope" type="Node2D" parent="Player"]
 modulate = Color(0.984314, 0.784314, 0, 1)
 z_index = 1
 z_as_relative = false
 texture_filter = 1
-position = Vector2(3.8445e-06, 3.78489e-06)
+position = Vector2(3.8445e-06, 6.5)
 scale = Vector2(0.333333, 0.333333)
 script = ExtResource("3_sweqy")
 num_segments = 70
@@ -194,27 +191,6 @@ loop_tolerance = 10
 
 [node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
 color = Color(0, 1, 0.316667, 1)
-
-[node name="Sparks" type="Node2D" parent="."]
-position = Vector2(0, 21)
-script = ExtResource("5_ofjh0")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Sparks"]
-texture_filter = 1
-texture = ExtResource("7_ofjh0")
-lifetime = 2.0
-preprocess = 0.52
-speed_scale = 2.35
-explosiveness = 1.0
-randomness = 0.05
-lifetime_randomness = 0.18
-emission_shape = 1
-emission_sphere_radius = 3.0
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 15.0
-initial_velocity_max = 30.0
-scale_amount_curve = SubResource("Curve_a1rq5")
 
 [connection signal="hit" from="." to="." method="_on_hit"]
 [connection signal="leavingEnemy" from="Player/Rope/loopAssist" to="Player/Rope/loopAssist" method="_on_leaving_enemy"]

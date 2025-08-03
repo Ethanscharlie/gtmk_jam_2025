@@ -42,7 +42,7 @@ polygon = PackedVector2Array(234, 174, 345, 138, 462, 120, 939, 120, 942, 120, 1
 navigation_polygon = SubResource("NavigationPolygon_yatjs")
 
 [node name="Player" parent="." instance=ExtResource("1_by2n7")]
-position = Vector2(304, 200)
+position = Vector2(960, 528)
 
 [node name="game_manager" type="Node2D" parent="."]
 

@@ -65,6 +65,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+visible = false
 z_index = 5
 offset_left = -204.0
 offset_top = -117.0
@@ -147,6 +148,10 @@ z_index = -1
 position = Vector2(197, 19)
 scale = Vector2(3, 3)
 texture = ExtResource("10_u57tp")
+
+[node name="PlayerStopingPoints" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlayerStopingPoints"]
 
 [connection signal="reset_wave" from="Player" to="game_manager/EnemySpawner" method="_on_player_reset_wave"]
 [connection signal="reset_wave" from="Player" to="game_manager/Scorekeeper" method="_on_player_reset_wave"]

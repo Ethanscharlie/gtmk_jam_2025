@@ -6,7 +6,6 @@
 
 [sub_resource type="Animation" id="Animation_ijp5w"]
 resource_name = "Fade"
-length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,34 +13,22 @@ tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-1920, 0)]
+"values": [Vector2(-223, -99)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:rotation")
-tracks/1/interp = 2
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/ColorRect:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.163524, 0.330191),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_q4dkv"]
@@ -151,27 +138,15 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-198, -133)]
+"values": [Vector2(-2000, 20000)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.224e+08, 1.321e+08)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -188,31 +163,19 @@ tracks/0/path = NodePath("AnimationPlayer/ColorRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(1.63333, 1.67),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
+"values": [Vector2(-198, -133), Vector2(2624, 61)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/ColorRect:size")
+tracks/1/path = NodePath("AnimationPlayer/ColorRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1.63333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -252,22 +215,41 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
-visible = false
-offset_left = -198.0
-offset_top = -133.0
+z_index = 1
+z_as_relative = false
+offset_left = -223.0
+offset_top = -99.0
 offset_right = 2.224e+08
 offset_bottom = 1.321e+08
 scale = Vector2(1e-05, 1e-05)
 color = Color(0, 0, 0, 1)
 
-[node name="back" type="Button" parent="."]
+[node name="Control" type="Control" parent="AnimationPlayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 338.0
+offset_top = 354.0
+offset_right = 378.0
+offset_bottom = 394.0
+
+[node name="Mouse" type="Button" parent="AnimationPlayer/Control"]
 texture_filter = 1
-offset_left = 16.0
-offset_top = 13.0
-offset_right = 416.0
-offset_bottom = 113.0
+offset_right = 1320.0
+offset_bottom = 100.0
 theme = ExtResource("5_ma5y3")
 theme_override_font_sizes/font_size = 100
-text = "back"
+button_mask = 7
+text = "Mouse toggle: X"
 
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[node name="Back" type="Button" parent="AnimationPlayer/Control"]
+texture_filter = 1
+offset_top = -163.0
+offset_right = 1320.0
+offset_bottom = -63.0
+theme = ExtResource("5_ma5y3")
+theme_override_font_sizes/font_size = 100
+button_mask = 7
+text = "Back"
+
+[connection signal="pressed" from="AnimationPlayer/Control/Mouse" to="." method="_on_mouse_pressed"]
+[connection signal="pressed" from="AnimationPlayer/Control/Back" to="." method="_on_back_pressed"]

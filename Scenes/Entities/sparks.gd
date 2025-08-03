@@ -1,5 +1,5 @@
 extends Node2D
-@onready var rope = get_node("../Player/Rope")
+@onready var rope = get_node("../Rope")
 
 func _ready():
 	_start_timer()

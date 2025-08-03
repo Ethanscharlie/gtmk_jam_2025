@@ -25,6 +25,7 @@ func _ready():
 func _next_wave():
 	if current_wave == len(wave_data) - 1:
 		_open_credits()
+		_destroy_all_enemies_and_bullets()
 		return
 		
 	current_wave += 1
@@ -67,9 +68,9 @@ func _on_enemy_killed() -> void:
 func _destroy_all_enemies_and_bullets():
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemy.queue_free()
-	
 	for bullet in get_tree().get_nodes_in_group("bullets"):
-		bullet.queue_free()	
+		print("destroy bullets")
+		bullet.queue_free()
 	
 func _reset_players_position() -> void:
 	var player = get_node("../../Player")

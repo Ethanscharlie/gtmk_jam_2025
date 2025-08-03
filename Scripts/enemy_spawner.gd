@@ -15,7 +15,12 @@ var current_enemies_in_wave = 0
 var wave_data = [
 	3,
 	4,
-	5
+	5,
+	6,
+	8,
+	10,
+	12,
+	15
 ]
 
 var basic_enemy = preload("res://Scenes/Entities/basic_enemy.tscn")

@@ -3,6 +3,7 @@ extends Node2D
 signal enemy_spawned(new_enemy)
 signal enemy_killed
 signal new_wave(wave: int)
+signal player_killed
 
 @export var spawn_rate = 2
 @export var spawn_margin = 30
@@ -75,13 +76,25 @@ func _destroy_all_enemies_and_bullets():
 		bullet.queue_free()
 	
 func _reset_players_position() -> void:
+	
 	var player = get_node("../../Player")
+	player.get_node("Player").play("death")
+	emit_signal("player_killed")
+	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
+	tween.tween_property(player, "scale", Vector2.ZERO, 2.0).set_trans(Tween.TRANS_SPRING)
+	player.get_node("Player/Rope").hide()
+	await get_tree().create_timer(2.5).timeout
+	
 	player.position = Vector2(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+	player.scale = Vector2(1,1)
+	player.get_node("Player").play("move")
+	player.get_node("Player/Rope").show()
 
 func _on_player_reset_wave() -> void:
 	_reset_players_position()
 	_destroy_all_enemies_and_bullets()
 	current_wave -= 1
+	await get_tree().create_timer(2).timeout
 	_next_wave()
 	
 func _open_credits() -> void:

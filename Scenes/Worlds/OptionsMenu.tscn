@@ -234,6 +234,7 @@ offset_bottom = 394.0
 
 [node name="Mouse" type="Button" parent="AnimationPlayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_right = 1320.0
 offset_bottom = 100.0
 theme = ExtResource("5_ma5y3")
@@ -243,6 +244,7 @@ text = "Mouse toggle: X"
 
 [node name="Back" type="Button" parent="AnimationPlayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_top = -163.0
 offset_right = 1320.0
 offset_bottom = -63.0

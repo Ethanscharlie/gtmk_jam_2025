@@ -811,13 +811,11 @@ color = Color(0, 0, 0, 1)
 [node name="music_menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wpwbt")
 autoplay = true
-bus = &"Music"
 parameters/looping = true
 
 [node name="sfx_mouseover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_nwwvf")
 volume_db = -5.0
-bus = &"Player SFX"
 
 [connection signal="mouse_entered" from="AnimationPlayer/Title/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="AnimationPlayer/Title/Play" to="." method="_on_play_pressed"]

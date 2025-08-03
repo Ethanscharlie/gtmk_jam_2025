@@ -65,6 +65,5 @@ autoplay = true
 max_distance = 200.0
 attenuation = 1.56
 panning_strength = 5.0
-bus = &"Enemy SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

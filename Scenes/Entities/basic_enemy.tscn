@@ -65,7 +65,7 @@ streams_count = 1
 stream_0/stream = ExtResource("6_xu6ej")
 
 [node name="basic_enemy" type="CharacterBody2D" groups=["enemies"]]
-z_index = 2
+z_index = 4
 collision_layer = 2
 collision_mask = 163
 motion_mode = 1
@@ -105,12 +105,10 @@ frame_progress = 0.617923
 [node name="sfx_enemydefeat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rdl85")
 volume_db = -3.0
-bus = &"Enemy SFX"
 
 [node name="sfx_enemyshoot" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_iemiq")
 volume_db = -12.0
-bus = &"BulletSFX"
 
 [connection signal="start_chasing_player" from="." to="." method="_on_start_chasing_player"]
 [connection signal="body_entered" from="ropeDetector" to="ropeDetector" method="_on_body_entered"]

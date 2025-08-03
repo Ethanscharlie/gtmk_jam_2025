@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmpsu58jcf4je"]
+[gd_scene load_steps=8 format=3 uid="uid://dmpsu58jcf4je"]
 
 [ext_resource type="FontFile" uid="uid://b64wowbafxnxd" path="res://Fonts/prstart.ttf" id="1_xfoy2"]
+[ext_resource type="Script" uid="uid://bsyc6jn8d0u3a" path="res://Scenes/Entities/credits.gd" id="1_yvpdd"]
+[ext_resource type="Theme" uid="uid://c56j6nm0h2ggm" path="res://Fonts/Title.tres" id="2_vsjyd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vsjyd"]
 line_spacing = 10.0
@@ -54,30 +56,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yvpdd")
 
 [node name="Label" type="Label" parent="."]
 z_index = 5
 texture_filter = 1
 layout_mode = 0
 offset_left = -3.0
+offset_top = -1092.0
 offset_right = 1916.0
-offset_bottom = 1073.0
-text = "Shorted-Out
+offset_bottom = -19.0
+text = "
+
+Short Out
 
 
 __ Created by __
 
-MajesticGenius101 - Programmer
+Miles Cook - Programmer
 Golden404 - Artist/Programmer
 Ethanscharlie - Programmer
 Note - Music/SFX
 
 
-
 Thanks for playing!"
 label_settings = SubResource("LabelSettings_vsjyd")
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
 libraries = {
@@ -92,3 +96,15 @@ offset_top = 51.0
 offset_right = 1723.0
 offset_bottom = 1013.0
 color = Color(0.74902, 1, 1, 0.282353)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 901.0
+offset_right = 1177.0
+offset_bottom = 1001.0
+theme = ExtResource("2_vsjyd")
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

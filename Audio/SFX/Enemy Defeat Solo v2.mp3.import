@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgjvwycmnecgf"
+path="res://.godot/imported/Enemy Defeat Solo v2.mp3-5f4aa95f646f7002474793f82fc1bd01.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Enemy Defeat Solo v2.mp3"
+dest_files=["res://.godot/imported/Enemy Defeat Solo v2.mp3-5f4aa95f646f7002474793f82fc1bd01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

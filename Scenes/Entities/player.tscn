@@ -1,140 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://5ol0c5vewmjh"]
+[gd_scene load_steps=13 format=3 uid="uid://5ol0c5vewmjh"]
 
 [ext_resource type="Script" uid="uid://c5a3pejdfi7p6" path="res://Scripts/playerMove.gd" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://ct7lxbrr0vq7o" path="res://Textures/Death.png" id="2_2hnfo"]
-[ext_resource type="Texture2D" uid="uid://cvlfft4kvawm8" path="res://Textures/Player.png" id="2_ofjh0"]
+[ext_resource type="Texture2D" uid="uid://c4dov02lmqrju" path="res://Textures/Images/Player.png" id="2_a1rq5"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cxriscmkss8rl" path="res://Scripts/loop_assist.gd" id="4_a1rq5"]
 [ext_resource type="Script" uid="uid://d0a4xy6qgbkku" path="res://Scripts/LoopChecker.gd" id="4_svftf"]
+[ext_resource type="Script" uid="uid://ccm8f0papn8q1" path="res://Scenes/Entities/sparks.gd" id="5_ofjh0"]
+[ext_resource type="Texture2D" uid="uid://bvq4oiwlwtxus" path="res://Images/Spark.png" id="5_yqx0t"]
+[ext_resource type="AudioStream" uid="uid://cb2phm6vwviux" path="res://Audio/SFX/Rope Connect.mp3" id="8_2hnfo"]
+[ext_resource type="AudioStream" uid="uid://bqjqsegrqihxp" path="res://Audio/SFX/Player Death.mp3" id="9_y18yp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1nhw"]
-radius = 23.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6fni"]
-atlas = ExtResource("2_2hnfo")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4uu0"]
-atlas = ExtResource("2_2hnfo")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_abjg5"]
-atlas = ExtResource("2_2hnfo")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hnfo"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(0, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y18yp"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(32, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85s6f"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(64, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f5ba2"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(128, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_14y0q"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(96, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvkok"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(160, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_at1v1"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(192, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pm2yg"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(224, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_43gew"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(256, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_udx2w"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(288, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aqs8i"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(320, 7, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vbauc"]
-atlas = ExtResource("2_ofjh0")
-region = Rect2(352, 7, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_p6fni"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p6fni")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w4uu0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_abjg5")
-}],
-"loop": true,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hnfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y18yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85s6f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f5ba2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_14y0q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kvkok")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_at1v1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pm2yg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_43gew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_udx2w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aqs8i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vbauc")
-}],
-"loop": true,
-"name": &"move",
-"speed": 9.0
-}]
+radius = 30.5941
 
 [sub_resource type="Curve" id="Curve_svftf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_a1rq5"]
+_data = [Vector2(0, 1), 0.0, -2.44053, 0, 0, Vector2(1, 0), -0.339685, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
@@ -144,6 +28,7 @@ script = ExtResource("1_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1nhw")
+
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -158,9 +43,13 @@ animation = &"move"
 modulate = Color(0.984314, 0.784314, 0, 1)
 z_index = 3
 z_as_relative = false
+
 texture_filter = 1
-position = Vector2(3.8445e-06, 6.5)
-scale = Vector2(0.333333, 0.333333)
+position = Vector2(-7.689e-06, -7.56979e-06)
+scale = Vector2(3, 3)
+texture = ExtResource("2_a1rq5")
+
+[node name="Rope" type="Node2D" parent="."]
 script = ExtResource("3_sweqy")
 num_segments = 70
 rope_length = 700.0
@@ -170,14 +59,12 @@ gravity_direction = Vector2(0, 0)
 damping = 3.0
 num_constraint_iterations = 200
 line_width = 5.0
+color = Color(0.870462, 0.732859, 3.85046e-07, 1)
 collision_mask = 2
 collision_layer = 32
 
-[node name="loopAssist" type="Node2D" parent="Player/Rope"]
+[node name="loopAssist" type="Node2D" parent="Rope"]
 script = ExtResource("4_a1rq5")
-
-[node name="Marker2D" type="Marker2D" parent="Player"]
-position = Vector2(3.8445e-06, 6.5)
 
 [node name="LoopChecker" type="Area2D" parent="."]
 collision_layer = 8
@@ -190,7 +77,42 @@ loop_tolerance = 10
 [node name="Polygon2D" type="Polygon2D" parent="LoopChecker"]
 color = Color(1, 1, 1, 0)
 
+[node name="Sparks" type="Node2D" parent="."]
+position = Vector2(0, 21)
+script = ExtResource("5_ofjh0")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sparks"]
+texture_filter = 1
+texture = ExtResource("5_yqx0t")
+lifetime = 2.0
+preprocess = 0.52
+speed_scale = 2.35
+explosiveness = 1.0
+randomness = 0.05
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 3.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_a1rq5")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+scale = Vector2(10, 10)
+current = true
+
+[node name="sfx_ropeconnect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2hnfo")
+volume_db = -10.0
+bus = &"Player SFX"
+
+[node name="sfx_playerdefeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_y18yp")
+volume_db = -3.0
+bus = &"Player SFX"
+
 [connection signal="hit" from="." to="." method="_on_hit"]
-[connection signal="leavingEnemy" from="Player/Rope/loopAssist" to="Player/Rope/loopAssist" method="_on_leaving_enemy"]
-[connection signal="nearEnemy" from="Player/Rope/loopAssist" to="Player/Rope/loopAssist" method="_on_near_enemy"]
+[connection signal="leavingEnemy" from="Rope/loopAssist" to="Rope/loopAssist" method="_on_leaving_enemy"]
+[connection signal="nearEnemy" from="Rope/loopAssist" to="Rope/loopAssist" method="_on_near_enemy"]
 [connection signal="body_entered" from="LoopChecker" to="LoopChecker" method="_on_body_entered"]

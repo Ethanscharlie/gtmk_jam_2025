@@ -142,12 +142,7 @@ var _contact_points := PackedVector2Array()
 
 
 # General
-@onready var marker = get_node("../Marker2D")
-@onready var rope = get_node(".")
 
-func _process(delta):
-	rope.global_position = marker.global_position
-		
 func _enter_tree() -> void:
 	_setup()
 
